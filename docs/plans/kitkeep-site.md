@@ -79,10 +79,10 @@ These apply to every task.
 - [x] Done when: `npm test` and `npm run build` pass, and the built site, served with `npm run serve`, shows winter-car correctly in all four languages.
 
 ### Task 5: Pull request checks and publishing
-- [ ] Before the first merge into `main`, the maintainer sets the Pages source to "GitHub Actions" on GitHub. Pages is currently off for the repo, and the workflow's token can't turn it on, so the deployment fails without this.
-- [ ] `.github/workflows/checks.yml` runs the Validation Commands on every pull request, on `pull_request` (not `pull_request_target`), with `permissions: contents: read`, using the Node version from `.nvmrc`.
-- [ ] `.github/workflows/publish.yml` runs on pushes to `main` (and manually): it runs the Validation Commands, then uploads `dist/` and deploys it to GitHub Pages through the `github-pages` environment, with only the permissions the deployment needs (`contents: read`, `pages: write`, `id-token: write`) and one deployment at a time.
-- [ ] Every action, GitHub's own `actions/*` included, is pinned to a full commit SHA, with the version in a comment. No secrets anywhere (domain rules, 3, pipeline security).
+- [x] Before the first merge into `main`, the maintainer sets the Pages source to "GitHub Actions" on GitHub. Pages is currently off for the repo, and the workflow's token can't turn it on, so the deployment fails without this.
+- [x] `.github/workflows/checks.yml` runs the Validation Commands on every pull request, on `pull_request` (not `pull_request_target`), with `permissions: contents: read`, using the Node version from `.nvmrc`.
+- [x] `.github/workflows/publish.yml` runs on pushes to `main` (and manually): it runs the Validation Commands, then uploads `dist/` and deploys it to GitHub Pages through the `github-pages` environment, with only the permissions the deployment needs (`contents: read`, `pages: write`, `id-token: write`) and one deployment at a time.
+- [x] Every action, GitHub's own `actions/*` included, is pinned to a full commit SHA, with the version in a comment. No secrets anywhere (domain rules, 3, pipeline security).
 - [ ] Done when: a pull request shows the checks passing; a pull request with a broken template shows them failing; and after merge, `https://weberlance.github.io/kitkeep-site/templates/v1/catalog.json` and `.../templates/v1/winter-car.json` are served over HTTPS and match the build.
 
 ### Task 6: Repository settings and contribution files
