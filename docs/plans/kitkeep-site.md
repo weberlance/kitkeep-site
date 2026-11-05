@@ -45,14 +45,14 @@ These apply to every task.
 - [x] Done when: every Validation Command succeeds on a fresh clone.
 
 ### Task 2: Template validator
-- [ ] Parse template files with a hand-written JSON reader that sees the raw text, so it can reject invalid UTF-8, a byte-order mark, repeated keys, `null`, and a `version` written with a decimal point or exponent (domain rules, 2.1, 2.3, 2.4). Standard `JSON.parse` hides these.
-- [ ] Check every rule in domain rules 2.1 (size, encoding), 2.3 (fields, `id` equal to the file name, items, item count, at least one item that isn't retired), 2.4, 2.5 (ids) and 2.6 (languages, lengths, whitespace, NFC, forbidden characters, `{{`, `}}`, `$t(`).
-- [ ] Reject fields not listed in domain rules 2.3, at every level. Inside `name`, `description` and `recommendation`, keys are language codes: the four required ones plus lowercase BCP 47 tags (domain rules, 2.6), checked with `Intl.getCanonicalLocales` and a lowercase test (domain rules, 3, checks).
-- [ ] `templates/v1/` may contain only `<id>.json` files, with `<id>` following 2.5. Anything else (including a `catalog.json`, subfolders or other files) is an error.
-- [ ] Report every problem in every file as `<file>: <JSON path>: <message>` (for example `winter-car.json: items[2].name.pl: ...`), not just the first one, and exit with a non-zero code if there is any.
-- [ ] `npm run check` validates every file in the templates folder.
-- [ ] Add the test template `templates/v1/winter-car.json`: the domain-rules example at `version: 1`, with its three items that aren't retired and without `hand-warmers`. It's test data (domain rules, section 3, before the first release). It's added here because git doesn't keep an empty folder, and `templates/v1/` can't hold a placeholder file, so `npm run check` would otherwise fail on a fresh clone.
-- [ ] Tests: one passing and one failing fixture for each rule, including the edge cases named in the rules (U+00A0 at an edge, U+2028, a lone surrogate, `3.0`, a repeated key, a 61-unit name, an emoji counted as 2 units, every item retired, an unknown field such as `recomendation`). The domain-rules example passes.
+- [x] Parse template files with a hand-written JSON reader that sees the raw text, so it can reject invalid UTF-8, a byte-order mark, repeated keys, `null`, and a `version` written with a decimal point or exponent (domain rules, 2.1, 2.3, 2.4). Standard `JSON.parse` hides these.
+- [x] Check every rule in domain rules 2.1 (size, encoding), 2.3 (fields, `id` equal to the file name, items, item count, at least one item that isn't retired), 2.4, 2.5 (ids) and 2.6 (languages, lengths, whitespace, NFC, forbidden characters, `{{`, `}}`, `$t(`).
+- [x] Reject fields not listed in domain rules 2.3, at every level. Inside `name`, `description` and `recommendation`, keys are language codes: the four required ones plus lowercase BCP 47 tags (domain rules, 2.6), checked with `Intl.getCanonicalLocales` and a lowercase test (domain rules, 3, checks).
+- [x] `templates/v1/` may contain only `<id>.json` files, with `<id>` following 2.5. Anything else (including a `catalog.json`, subfolders or other files) is an error.
+- [x] Report every problem in every file as `<file>: <JSON path>: <message>` (for example `winter-car.json: items[2].name.pl: ...`), not just the first one, and exit with a non-zero code if there is any.
+- [x] `npm run check` validates every file in the templates folder.
+- [x] Add the test template `templates/v1/winter-car.json`: the domain-rules example at `version: 1`, with its three items that aren't retired and without `hand-warmers`. It's test data (domain rules, section 3, before the first release). It's added here because git doesn't keep an empty folder, and `templates/v1/` can't hold a placeholder file, so `npm run check` would otherwise fail on a fresh clone.
+- [x] Tests: one passing and one failing fixture for each rule, including the edge cases named in the rules (U+00A0 at an edge, U+2028, a lone surrogate, `3.0`, a repeated key, a 61-unit name, an emoji counted as 2 units, every item retired, an unknown field such as `recomendation`). The domain-rules example passes.
 - [ ] Done when: `npm test` and `npm run check` pass, and a broken fixture copied into `templates/v1/` makes `npm run check` fail with a readable message.
 
 ### Task 3: Catalog generator
