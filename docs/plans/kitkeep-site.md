@@ -62,7 +62,7 @@ These apply to every task.
 - [x] Output format: `JSON.stringify(catalog, null, 2)` plus a trailing newline, with keys in this order: `format`, `templates`; in each entry `id`, `version`, `itemCount`, `name`, `description`.
 - [x] The build fails if the generated catalog breaks a rule in 2.1 or 2.2 (for example, it's over 256 KB).
 - [x] Tests: empty catalog, a retired template left out, a retired item not counted, sort order, extra languages copied, an oversized catalog failing the build (generated in the test), and each copied template byte-identical to its source.
-- [ ] Done when: `npm test` and `npm run build` pass, and the built catalog for the test fixtures matches the expected file exactly.
+- [x] Done when: `npm test` and `npm run build` pass, and the built catalog for the test fixtures matches the expected file exactly.
 
 ### Task 4: Site pages and the test template
 - [ ] Build `/`, `/gallery/` and `/gallery/<id>/` as described in domain rules, section 4:
