@@ -39,9 +39,9 @@ These apply to every task.
 - **HTML:** every template text is inserted through one `escapeHtml()` helper. Pages are written as `<path>/index.html`, so URLs end in `/`. All links are built from the base path `/kitkeep-site/`.
 
 ### Task 1: Project setup
-- [ ] Add `package.json` with the `test`, `check`, `build` and `serve` scripts and `engines.node`, the lockfile, `.nvmrc` (`26`), and `.gitignore` (`dist/`, `node_modules/`).
-- [ ] Add the licenses: `LICENSE` (MIT) for the code, and `templates/LICENSE` (CC0 1.0) for template content.
-- [ ] Add a short `README.md`: what the repo is, the commands, the site configuration, and where the rules are.
+- [x] Add `package.json` with the `test`, `check`, `build` and `serve` scripts and `engines.node`, the lockfile, `.nvmrc` (`26`), and `.gitignore` (`dist/`, `node_modules/`).
+- [x] Add the licenses: `LICENSE` (MIT) for the code, and `templates/LICENSE` (CC0 1.0) for template content.
+- [x] Add a short `README.md`: what the repo is, the commands, the site configuration, and where the rules are.
 - [ ] Done when: every Validation Command succeeds on a fresh clone.
 
 ### Task 2: Template validator

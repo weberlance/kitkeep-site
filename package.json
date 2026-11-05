@@ -1,0 +1,17 @@
+{
+  "name": "kitkeep-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "The website of the KitKeep app and the source of its downloadable kit templates",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=26 <27"
+  },
+  "scripts": {
+    "test": "node --test",
+    "check": "node scripts/check.js",
+    "build": "node scripts/build.js",
+    "serve": "node scripts/serve.js"
+  }
+}
