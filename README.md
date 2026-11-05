@@ -20,6 +20,7 @@ Options are passed after `--`, for example `npm run build -- --templates test/fi
 - `--out <dir>` (`build`): the output folder, by default `dist`
 - `--config <file>` (`build`): the site configuration, by default `site.config.json`
 - `--base <ref>` (`check`): the ref to compare templates with, by default `origin/main`
+- `--out <dir>` and `--port <number>` (`serve`): the folder to serve, by default `dist`, and the port, by default `8080`
 
 ## Site configuration
 
@@ -38,3 +39,5 @@ Options are passed after `--`, for example `npm run build -- --templates test/fi
 ## Licenses
 
 The code is under the MIT license (`LICENSE`). Template content in `templates/` is released under CC0 1.0 (`templates/LICENSE`).
+
+The store badges in `src/assets/badges/` belong to Apple and Google, are used under their guidelines, and aren't under either license.

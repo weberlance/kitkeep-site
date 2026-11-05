@@ -65,17 +65,17 @@ These apply to every task.
 - [x] Done when: `npm test` and `npm run build` pass, and the built catalog for the test fixtures matches the expected file exactly.
 
 ### Task 4: Site pages and the test template
-- [ ] Build `/`, `/gallery/` and `/gallery/<id>/` as described in domain rules, section 4:
+- [x] Build `/`, `/gallery/` and `/gallery/<id>/` as described in domain rules, section 4:
   - the home page: what KitKeep is and a link to the gallery (text drafted by Claude, reviewed in the pull request);
   - the gallery list (English, sorted by English name with `Intl.Collator('en')`, ties by `id`, with item count);
   - template pages: items grouped as Essential then Optional, file order within each group, retired items hidden, and no version;
   - pages for retired templates, with their notice and not listed in the gallery.
-- [ ] Language switching on template pages: the page contains one block per app language (`<section lang="en">`, `ru`, `pl`, `uk`) and four buttons (`English`, `Русский`, `Polski`, `Українська`). A small inline script shows English on load and the chosen block on click; the choice isn't remembered or put in the URL. Without JavaScript all four blocks are shown, English first, and the buttons stay hidden because they would do nothing (they're `hidden` in the HTML and the script reveals them). Extra languages aren't shown. Each block holds the template's name, description, items and recommendations; the site's own text, such as "Essential" and "Optional", stays in English (domain rules, section 4).
-- [ ] Shared layout: footer on every page, and links working under `/kitkeep-site/`.
-- [ ] Store buttons: the official App Store and Google Play badges, stored in `src/assets/badges/` (downloaded once from Apple's and Google's marketing pages and used under their guidelines), each shown only when its link is set in `site.config.json`. Add `site.config.json` here, with both links and `supportEmail` set to `null`. The README notes that the badges belong to Apple and Google and aren't under the repo's licenses.
-- [ ] No third-party resources: no analytics, cookies, or fonts, scripts or images from other hosts. Plain CSS in `src/assets/`.
-- [ ] `npm run serve` serves `dist/` under `/kitkeep-site/` with Node's `http` module, for previewing.
-- [ ] Tests on the build output (built from fixtures): the gallery list and order, retired templates and items, grouping, the language blocks, an HTML special character in a template text escaped, store buttons with neither link, one link and both links set (each through `--config`), the footer on every page, and no resource URL (`src`, `<link href>`, CSS `url()`) pointing to another host. Ordinary `<a href>` links may point anywhere.
+- [x] Language switching on template pages: the page contains one block per app language (`<section lang="en">`, `ru`, `pl`, `uk`) and four buttons (`English`, `Русский`, `Polski`, `Українська`). A small inline script shows English on load and the chosen block on click; the choice isn't remembered or put in the URL. Without JavaScript all four blocks are shown, English first, and the buttons stay hidden because they would do nothing (they're `hidden` in the HTML and the script reveals them). Extra languages aren't shown. Each block holds the template's name, description, items and recommendations; the site's own text, such as "Essential" and "Optional", stays in English (domain rules, section 4).
+- [x] Shared layout: footer on every page, and links working under `/kitkeep-site/`.
+- [x] Store buttons: the official App Store and Google Play badges, stored in `src/assets/badges/` (downloaded once from Apple's and Google's marketing pages and used under their guidelines), each shown only when its link is set in `site.config.json`. Add `site.config.json` here, with both links and `supportEmail` set to `null`. The README notes that the badges belong to Apple and Google and aren't under the repo's licenses.
+- [x] No third-party resources: no analytics, cookies, or fonts, scripts or images from other hosts. Plain CSS in `src/assets/`.
+- [x] `npm run serve` serves `dist/` under `/kitkeep-site/` with Node's `http` module, for previewing.
+- [x] Tests on the build output (built from fixtures): the gallery list and order, retired templates and items, grouping, the language blocks, an HTML special character in a template text escaped, store buttons with neither link, one link and both links set (each through `--config`), the footer on every page, and no resource URL (`src`, `<link href>`, CSS `url()`) pointing to another host. Ordinary `<a href>` links may point anywhere.
 - [ ] Done when: `npm test` and `npm run build` pass, and the built site, served with `npm run serve`, shows winter-car correctly in all four languages.
 
 ### Task 5: Pull request checks and publishing
