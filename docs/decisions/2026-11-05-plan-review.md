@@ -78,6 +78,21 @@ Each decision gives what was chosen, why, and what was rejected.
   - the home page text is drafted by Claude and reviewed in its pull request.
 - **Why:** routine choices that make every task checkable.
 
+## 13. Size limit in bytes
+- **Decision:** "256 KB" in domain rules 2.1 means 262,144 bytes (256 × 1024). The app still has to confirm this (open question 1).
+- **Why:** the maintainer's choice. The site and the app have to use the same number, or the site could publish a file the app rejects.
+- **Rejected:** 256,000 bytes.
+
+## 14. Task order
+- **Decision:** the privacy and support pages stay at Task 10, after the integration test with the app (Task 7).
+- **Why:** the maintainer's choice, knowing that those pages wait until the app's download feature works.
+- **Rejected:** moving Task 10 ahead of Task 7.
+
+## 15. No instructions for finding a template in the app
+- **Decision:** template pages don't say how to find the template in the app. A retired template's page keeps its notice.
+- **Why:** the maintainer's choice. It also settles which language the template's name would have used in that line.
+- **Rejected:** "New kit → More templates → <name>", with the name in the chosen language or always in English.
+
 ## Draft lists for Task 8
 The maintainer's draft, as given on 2026-11-05. Recommendations may be shortened to fit 2.6.
 

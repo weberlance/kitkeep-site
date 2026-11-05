@@ -26,7 +26,7 @@ The site's templates are extra kit templates that can be added without releasing
 - **Files:** `catalog.json` and one `<id>.json` per template, both directly under the base.
 - **HTTPS only.** A redirect is allowed only to another HTTPS address.
 - **Encoding:** UTF-8 JSON with no byte-order mark.
-- **Size:** at most 256 KB per file, counted on the bytes of the file as stored, before any compression in transit. At about 2–2.5 KB per entry, the catalog reaches this limit at roughly 100 templates; going past that needs `v2/` (2.7).
+- **Size:** at most 256 KB (262,144 bytes) per file **(app: to confirm)**, counted on the bytes of the file as stored, before any compression in transit. At about 2–2.5 KB per entry, the catalog reaches this limit at roughly 100 templates; going past that needs `v2/` (2.7).
 
 ### 2.2 `catalog.json`
 ```json
@@ -205,12 +205,12 @@ All paths are relative to the site's base address, `https://weberlance.github.io
 |---|---|
 | `/` | What KitKeep is (emergency kits, expiry tracking, works offline, no account), store buttons, and a link to the gallery. Screenshots can come later. |
 | `/gallery/` | The list of the site's published templates that aren't retired: name, description and item count, in English, sorted by English name. Built-in templates aren't listed. |
-| `/gallery/<id>/` | One template: name, description, item count (items that aren't retired), and the items with their recommendations, retired items hidden. Items are grouped as "Essential" then "Optional", in file order within each group. The version isn't shown. The page says how to find the template in the app: "New kit → More templates → <name>". Also store buttons. |
+| `/gallery/<id>/` | One template: name, description, item count (items that aren't retired), and the items with their recommendations, retired items hidden. Items are grouped as "Essential" then "Optional", in file order within each group. The version isn't shown. Also store buttons. |
 | `/privacy/` | The privacy policy (section 5) |
 | `/support/` | The support email address and a short FAQ (for example, how to move kits to a new phone: export them in Settings, then import the file on the new phone) |
 
 - **Paths:** pages stay out of `/templates/`, so a template id can never collide with the data folder.
-- **Retired templates:** a retired template's page stays, so shared links keep working. It shows a notice, "This template is no longer offered in the app", in place of the instructions for finding it in the app, and it isn't listed on `/gallery/`.
+- **Retired templates:** a retired template's page stays, so shared links keep working. It shows a notice, "This template is no longer offered in the app", and it isn't listed on `/gallery/`.
 - **Languages:** the site's own text is in English only. Template pages show the template in the four app languages, English first, and the reader can switch between them; each page load starts in English. Without JavaScript all four are shown, English first. Extra languages in a template aren't shown until the app supports them.
 - **Footer on every page:** "Templates are suggestions from the KitKeep community, not professional safety advice."
 - **Store buttons** (App Store and Google Play): the official badges, served from the site itself. Each appears only when its store link is set in the site's configuration. With neither set, no buttons appear.
