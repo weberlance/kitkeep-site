@@ -7,7 +7,7 @@ import { afterEach, beforeEach, describe, it } from 'node:test';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = fileURLToPath(new URL('..', import.meta.url));
-const WINTER_CAR = join(ROOT, 'templates/v1/winter-car.json');
+const WINTER_CAR = join(ROOT, 'test/fixtures/site/winter-car.json');
 
 function runCheck(...args) {
   return spawnSync(process.execPath, ['scripts/check.js', ...args], { cwd: ROOT, encoding: 'utf8' });
@@ -18,9 +18,20 @@ describe('npm run check', () => {
   beforeEach(() => { folder = mkdtempSync(join(tmpdir(), 'kitkeep-check-')); });
   afterEach(() => { rmSync(folder, { recursive: true, force: true }); });
 
-  it('passes on the repository templates by default', () => {
-    const result = runCheck();
-    assert.equal(result.status, 0, result.stderr);
+  // Runs in a temporary folder, so the tests don't depend on the published
+  // templates. CI checks those with its own `npm run check` step.
+  it('reads templates/v1 in the working folder by default', () => {
+    const data = join(folder, 'templates/v1');
+    mkdirSync(data, { recursive: true });
+    copyFileSync(WINTER_CAR, join(data, 'winter-car.json'));
+    const run = () => spawnSync(process.execPath, [join(ROOT, 'scripts/check.js')], { cwd: folder, encoding: 'utf8' });
+
+    const valid = run();
+    assert.equal(valid.status, 0, valid.stderr);
+    assert.match(valid.stdout, /1 template file\(s\) in templates\/v1/);
+
+    writeFileSync(join(data, 'notes.txt'), 'x');
+    assert.equal(run().status, 1);
   });
 
   it('passes on a folder of valid templates', () => {

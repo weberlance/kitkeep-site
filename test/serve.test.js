@@ -8,6 +8,7 @@ import { after, before, describe, it } from 'node:test';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = fileURLToPath(new URL('..', import.meta.url));
+const FIXTURES = join(ROOT, 'test/fixtures/site');
 
 // A raw request, because fetch() would clean up a path such as /../.
 function get(port, path) {
@@ -36,7 +37,7 @@ describe('npm run serve', () => {
     work = mkdtempSync(join(tmpdir(), 'kitkeep-serve-'));
     out = join(work, 'dist');
     writeFileSync(join(work, 'secret.txt'), 'outside');
-    const built = spawnSync(process.execPath, ['scripts/build.js', '--out', out], { cwd: ROOT, encoding: 'utf8' });
+    const built = spawnSync(process.execPath, ['scripts/build.js', '--out', out, '--templates', FIXTURES], { cwd: ROOT, encoding: 'utf8' });
     assert.equal(built.status, 0, built.stderr);
 
     server = spawn(process.execPath, ['scripts/serve.js', '--out', out, '--port', '0'], { cwd: ROOT });
@@ -71,7 +72,7 @@ describe('npm run serve', () => {
     const response = await get(port, '/kitkeep-site/templates/v1/winter-car.json');
     assert.equal(response.status, 200);
     assert.match(response.headers['content-type'], /application\/json/);
-    assert.deepEqual(response.body, readFileSync(join(ROOT, 'templates/v1/winter-car.json')));
+    assert.deepEqual(response.body, readFileSync(join(FIXTURES, 'winter-car.json')));
   });
 
   it('redirects a folder without its slash, and / to the base path', async () => {
