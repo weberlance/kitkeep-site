@@ -170,8 +170,11 @@ These rules apply to every `name`, `description` and `recommendation`, in every 
   - a `CODEOWNERS` entry covers `templates/`, and review from code owners becomes required once there's a second maintainer.
 - **Template files** live in the repo at `templates/v1/<id>.json` and are published exactly as they are.
 - **The catalog is generated** from the template files when the site is built, and isn't kept in the repo, so the two can't disagree.
+- **Before the app's first release:** templates in `templates/v1/` are test data, used to test GitHub Pages and the app's integration. They may be changed or deleted freely, and the checks against `main` below aren't in force yet. They come into force before the app's first release; from then on the rules in 2.7 apply to everything in `v1/`.
 - **Checks on every pull request:**
   - every template file meets section 2, including its size;
+  - no template file has a field that section 2.3 doesn't list (inside texts, keys are language codes). This is stricter than the app, which ignores unknown fields, so that a typo like `recomendation` can't be published. Adding a field means changing 2.3 and the checks in the same pull request;
+  - `templates/v1/` holds only `<id>.json` files;
   - no item id on `main` is missing from the pull request;
   - no template file on `main` is missing from the pull request;
   - a template file whose parsed JSON differs from `main` has a higher `version`, and no `version` is lower than on `main`;
@@ -180,9 +183,10 @@ These rules apply to every `name`, `description` and `recommendation`, in every 
 - **Licenses:** template content (`templates/`) is released under CC0; the site's code is under MIT. The app shows template texts without room for credits, and CC0 means nobody has to be credited.
 - **Contributions:** a pull request template:
   - asks how each language was written: native speaker, fluent speaker, or machine translation;
+  - asks for a source for the quantities if there is one, for example an official preparedness guide. A source is recommended, not required: some templates are for very specific kits with no official guide;
   - states that submitting releases the contribution under CC0.
 
-  The maintainer checks the languages they know and spot-checks the others. Later, a `CONTRIBUTING.md` asks template pull requests to link a source for their quantities, for example an official preparedness guide.
+  The maintainer checks the languages they know and spot-checks the others. Later, a `CONTRIBUTING.md` repeats these points for template pull requests.
 - **Account security:** the catalog isn't signed, so the account is the only protection.
   - Two-factor authentication on the account (ideally a passkey or security key), and recovery codes kept safe.
   - The account is never renamed or deleted: a freed username can be registered by someone else, who would then serve the address in 2.1.
@@ -207,9 +211,9 @@ All paths are relative to the site's base address, `https://weberlance.github.io
 
 - **Paths:** pages stay out of `/templates/`, so a template id can never collide with the data folder.
 - **Retired templates:** a retired template's page stays, so shared links keep working. It shows a notice, "This template is no longer offered in the app", in place of the instructions for finding it in the app, and it isn't listed on `/gallery/`.
-- **Languages:** the site's own text is in English only. Template pages show the template in the four app languages, English first, and the reader can switch between them. Extra languages in a template aren't shown until the app supports them.
+- **Languages:** the site's own text is in English only. Template pages show the template in the four app languages, English first, and the reader can switch between them; each page load starts in English. Without JavaScript all four are shown, English first. Extra languages in a template aren't shown until the app supports them.
 - **Footer on every page:** "Templates are suggestions from the KitKeep community, not professional safety advice."
-- **Store buttons** (App Store and Google Play): each appears only when its store link is set in the site's configuration. With neither set, no buttons appear.
+- **Store buttons** (App Store and Google Play): the official badges, served from the site itself. Each appears only when its store link is set in the site's configuration. With neither set, no buttons appear.
 - **No third-party resources:** the site has no analytics, no cookies, and no fonts, scripts or images from other hosts. Everything is served from GitHub Pages.
 
 ## 5. Privacy policy
@@ -244,7 +248,6 @@ The policy covers both the app and the site. It's in English, shows a "Last upda
 
 ## 6. Support contact
 
-A dedicated mailbox used only for KitKeep, not the maintainer's personal one (for example on Proton or Gmail).
+`kitkeep.app@gmail.com`: a dedicated Gmail mailbox used only for KitKeep, not the maintainer's personal one.
 - It's protected like the GitHub account: a passkey or two-factor authentication, and recovery codes kept with the GitHub ones.
 - It must never lapse, because its address is printed in the policy and the store listings.
-- The address name is still to be chosen (`docs/open-questions.md`).
