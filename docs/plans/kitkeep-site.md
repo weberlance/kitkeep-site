@@ -86,8 +86,8 @@ These apply to every task.
 - [x] Done when: a pull request shows the checks passing; a pull request with a broken template shows them failing; and after merge, `https://weberlance.github.io/kitkeep-site/templates/v1/catalog.json` and `.../templates/v1/winter-car.json` are served over HTTPS and match the build.
 
 ### Task 6: Repository settings and contribution files
-- [ ] Add `.github/CODEOWNERS` covering `templates/` with `@weberlance`.
-- [ ] Add `.github/pull_request_template.md` that asks how each language was written (native speaker, fluent speaker, machine translation), asks for a source for the quantities if there is one (for example an official preparedness guide; recommended, not required), and states that contributions are released under CC0.
+- [x] Add `.github/CODEOWNERS` covering `templates/` with `@weberlance`.
+- [x] Add `.github/pull_request_template.md` that asks how each language was written (native speaker, fluent speaker, machine translation), asks for a source for the quantities if there is one (for example an official preparedness guide; recommended, not required), and states that contributions are released under CC0.
 - [ ] Settings (done by the maintainer on GitHub):
   - a ruleset on `main`: changes only through pull requests, the `checks.yml` job required to pass, no force pushes, no deletion, no required review, and no bypass for anyone, admins included;
   - the `github-pages` environment allows deployments only from `main`;
