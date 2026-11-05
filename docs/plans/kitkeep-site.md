@@ -95,6 +95,8 @@ These apply to every task.
 - [ ] Account (done by the maintainer): two-factor authentication with a passkey or security key, and recovery codes stored safely.
 - [ ] Done when: a direct push to `main` is refused, and a pull request with failing checks can't be merged.
 
+**Postponed (2026-11-05):** the settings, the account item and the Done when above aren't finished, because the maintainer temporarily can't reach the GitHub account's email, which GitHub asks for when creating the ruleset. Until they're finished, `main` isn't protected. As an agreed exception, Task 7 may start without them. They must be finished and ticked before Task 8 starts.
+
 ### Task 7: Integration test with the app
 Done together with the app project; the app side is judged there.
 - [ ] The app's test build fetches `catalog.json` and `winter-car.json` from GitHub Pages and creates a kit from it.
