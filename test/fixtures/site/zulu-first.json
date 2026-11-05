@@ -1,0 +1,25 @@
+{
+  "format": "kitkeep-template",
+  "id": "zulu-first",
+  "version": 1,
+  "name": { "en": "Alpha <first> kit", "ru": "Набор <первый>", "pl": "Zestaw <pierwszy>", "uk": "Набір <перший>" },
+  "description": { "en": "Tom & Jerry's \"light\" kit, <5 kg.", "ru": "Лёгкий набор, <5 кг.", "pl": "Lekki zestaw, <5 kg.", "uk": "Легкий набір, <5 кг." },
+  "items": [
+    {
+      "id": "spare-rope",
+      "importance": "optional",
+      "name": { "en": "Spare rope", "ru": "Запасная верёвка", "pl": "Zapasowa lina", "uk": "Запасна мотузка" }
+    },
+    {
+      "id": "first-essential",
+      "importance": "essential",
+      "name": { "en": "First essential <b>", "ru": "Первое важное", "pl": "Pierwsze ważne", "uk": "Перше важливе" },
+      "recommendation": { "en": "Under 5 kg & \"dry\"", "ru": "До 5 кг", "pl": "Do 5 kg", "uk": "До 5 кг" }
+    },
+    {
+      "id": "second-essential",
+      "importance": "essential",
+      "name": { "en": "Second essential", "ru": "Второе важное", "pl": "Drugie ważne", "uk": "Друге важливе" }
+    }
+  ]
+}

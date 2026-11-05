@@ -1,0 +1,15 @@
+{
+  "format": "kitkeep-template",
+  "id": "retired-kit",
+  "version": 3,
+  "retired": true,
+  "name": { "en": "Retired kit", "ru": "Снятый набор", "pl": "Wycofany zestaw", "uk": "Знятий набір" },
+  "description": { "en": "No longer offered.", "ru": "Больше не предлагается.", "pl": "Już niedostępny.", "uk": "Більше не пропонується." },
+  "items": [
+    {
+      "id": "old-thing",
+      "importance": "essential",
+      "name": { "en": "Old thing", "ru": "Старая вещь", "pl": "Stara rzecz", "uk": "Стара річ" }
+    }
+  ]
+}

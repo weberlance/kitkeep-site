@@ -56,12 +56,12 @@ These apply to every task.
 - [x] Done when: `npm test` and `npm run check` pass, and a broken fixture copied into `templates/v1/` makes `npm run check` fail with a readable message.
 
 ### Task 3: Catalog generator
-- [ ] `npm run build` first validates the templates folder as in Task 2 and fails if any file is invalid.
-- [ ] It copies every `<id>.json` byte for byte to `dist/templates/v1/`, retired templates included, and generates `dist/templates/v1/catalog.json` (domain rules, 2.2 and 3). The catalog is never committed.
-- [ ] The catalog lists templates that aren't retired, sorted by `id` in code-point order, with `version`, `name` and `description` copied from the file (including extra languages, in the file's key order) and `itemCount` counting items that aren't retired.
-- [ ] Output format: `JSON.stringify(catalog, null, 2)` plus a trailing newline, with keys in this order: `format`, `templates`; in each entry `id`, `version`, `itemCount`, `name`, `description`.
-- [ ] The build fails if the generated catalog breaks a rule in 2.1 or 2.2 (for example, it's over 256 KB).
-- [ ] Tests: empty catalog, a retired template left out, a retired item not counted, sort order, extra languages copied, an oversized catalog failing the build (generated in the test), and each copied template byte-identical to its source.
+- [x] `npm run build` first validates the templates folder as in Task 2 and fails if any file is invalid.
+- [x] It copies every `<id>.json` byte for byte to `dist/templates/v1/`, retired templates included, and generates `dist/templates/v1/catalog.json` (domain rules, 2.2 and 3). The catalog is never committed.
+- [x] The catalog lists templates that aren't retired, sorted by `id` in code-point order, with `version`, `name` and `description` copied from the file (including extra languages, in the file's key order) and `itemCount` counting items that aren't retired.
+- [x] Output format: `JSON.stringify(catalog, null, 2)` plus a trailing newline, with keys in this order: `format`, `templates`; in each entry `id`, `version`, `itemCount`, `name`, `description`.
+- [x] The build fails if the generated catalog breaks a rule in 2.1 or 2.2 (for example, it's over 256 KB).
+- [x] Tests: empty catalog, a retired template left out, a retired item not counted, sort order, extra languages copied, an oversized catalog failing the build (generated in the test), and each copied template byte-identical to its source.
 - [ ] Done when: `npm test` and `npm run build` pass, and the built catalog for the test fixtures matches the expected file exactly.
 
 ### Task 4: Site pages and the test template
