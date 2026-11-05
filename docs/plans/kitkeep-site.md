@@ -76,7 +76,7 @@ These apply to every task.
 - [x] No third-party resources: no analytics, cookies, or fonts, scripts or images from other hosts. Plain CSS in `src/assets/`.
 - [x] `npm run serve` serves `dist/` under `/kitkeep-site/` with Node's `http` module, for previewing.
 - [x] Tests on the build output (built from fixtures): the gallery list and order, retired templates and items, grouping, the language blocks, an HTML special character in a template text escaped, store buttons with neither link, one link and both links set (each through `--config`), the footer on every page, and no resource URL (`src`, `<link href>`, CSS `url()`) pointing to another host. Ordinary `<a href>` links may point anywhere.
-- [ ] Done when: `npm test` and `npm run build` pass, and the built site, served with `npm run serve`, shows winter-car correctly in all four languages.
+- [x] Done when: `npm test` and `npm run build` pass, and the built site, served with `npm run serve`, shows winter-car correctly in all four languages.
 
 ### Task 5: Pull request checks and publishing
 - [ ] Before the first merge into `main`, the maintainer sets the Pages source to "GitHub Actions" on GitHub. Pages is currently off for the repo, and the workflow's token can't turn it on, so the deployment fails without this.
