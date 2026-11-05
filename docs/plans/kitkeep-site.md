@@ -53,7 +53,7 @@ These apply to every task.
 - [x] `npm run check` validates every file in the templates folder.
 - [x] Add the test template `templates/v1/winter-car.json`: the domain-rules example at `version: 1`, with its three items that aren't retired and without `hand-warmers`. It's test data (domain rules, section 3, before the first release). It's added here because git doesn't keep an empty folder, and `templates/v1/` can't hold a placeholder file, so `npm run check` would otherwise fail on a fresh clone.
 - [x] Tests: one passing and one failing fixture for each rule, including the edge cases named in the rules (U+00A0 at an edge, U+2028, a lone surrogate, `3.0`, a repeated key, a 61-unit name, an emoji counted as 2 units, every item retired, an unknown field such as `recomendation`). The domain-rules example passes.
-- [ ] Done when: `npm test` and `npm run check` pass, and a broken fixture copied into `templates/v1/` makes `npm run check` fail with a readable message.
+- [x] Done when: `npm test` and `npm run check` pass, and a broken fixture copied into `templates/v1/` makes `npm run check` fail with a readable message.
 
 ### Task 3: Catalog generator
 - [ ] `npm run build` first validates the templates folder as in Task 2 and fails if any file is invalid.
