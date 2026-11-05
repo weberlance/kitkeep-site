@@ -83,7 +83,7 @@ These apply to every task.
 - [x] `.github/workflows/checks.yml` runs the Validation Commands on every pull request, on `pull_request` (not `pull_request_target`), with `permissions: contents: read`, using the Node version from `.nvmrc`.
 - [x] `.github/workflows/publish.yml` runs on pushes to `main` (and manually): it runs the Validation Commands, then uploads `dist/` and deploys it to GitHub Pages through the `github-pages` environment, with only the permissions the deployment needs (`contents: read`, `pages: write`, `id-token: write`) and one deployment at a time.
 - [x] Every action, GitHub's own `actions/*` included, is pinned to a full commit SHA, with the version in a comment. No secrets anywhere (domain rules, 3, pipeline security).
-- [ ] Done when: a pull request shows the checks passing; a pull request with a broken template shows them failing; and after merge, `https://weberlance.github.io/kitkeep-site/templates/v1/catalog.json` and `.../templates/v1/winter-car.json` are served over HTTPS and match the build.
+- [x] Done when: a pull request shows the checks passing; a pull request with a broken template shows them failing; and after merge, `https://weberlance.github.io/kitkeep-site/templates/v1/catalog.json` and `.../templates/v1/winter-car.json` are served over HTTPS and match the build.
 
 ### Task 6: Repository settings and contribution files
 - [ ] Add `.github/CODEOWNERS` covering `templates/` with `@weberlance`.
