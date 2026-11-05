@@ -42,7 +42,7 @@ These apply to every task.
 - [x] Add `package.json` with the `test`, `check`, `build` and `serve` scripts and `engines.node`, the lockfile, `.nvmrc` (`26`), and `.gitignore` (`dist/`, `node_modules/`).
 - [x] Add the licenses: `LICENSE` (MIT) for the code, and `templates/LICENSE` (CC0 1.0) for template content.
 - [x] Add a short `README.md`: what the repo is, the commands, the site configuration, and where the rules are.
-- [ ] Done when: every Validation Command succeeds on a fresh clone.
+- [x] Done when: every Validation Command succeeds on a fresh clone.
 
 ### Task 2: Template validator
 - [ ] Parse template files with a hand-written JSON reader that sees the raw text, so it can reject invalid UTF-8, a byte-order mark, repeated keys, `null`, and a `version` written with a decimal point or exponent (domain rules, 2.1, 2.3, 2.4). Standard `JSON.parse` hides these.
