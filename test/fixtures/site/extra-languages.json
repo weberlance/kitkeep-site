@@ -1,0 +1,14 @@
+{
+  "format": "kitkeep-template",
+  "id": "extra-languages",
+  "version": 7,
+  "name": { "en": "Multilingual kit", "de": "Mehrsprachiges Set", "ru": "Многоязычный набор", "pl": "Zestaw wielojęzyczny", "uk": "Багатомовний набір", "pt-br": "Kit multilíngue" },
+  "description": { "pt-br": "Com idiomas extras.", "en": "With extra languages.", "ru": "С дополнительными языками.", "pl": "Z dodatkowymi językami.", "uk": "З додатковими мовами." },
+  "items": [
+    {
+      "id": "torch",
+      "importance": "essential",
+      "name": { "en": "Torch", "ru": "Фонарь", "pl": "Latarka", "uk": "Ліхтар", "de": "Taschenlampe" }
+    }
+  ]
+}

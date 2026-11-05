@@ -1,0 +1,59 @@
+{
+  "format": "kitkeep-catalog",
+  "templates": [
+    {
+      "id": "extra-languages",
+      "version": 7,
+      "itemCount": 1,
+      "name": {
+        "en": "Multilingual kit",
+        "de": "Mehrsprachiges Set",
+        "ru": "Многоязычный набор",
+        "pl": "Zestaw wielojęzyczny",
+        "uk": "Багатомовний набір",
+        "pt-br": "Kit multilíngue"
+      },
+      "description": {
+        "pt-br": "Com idiomas extras.",
+        "en": "With extra languages.",
+        "ru": "С дополнительными языками.",
+        "pl": "Z dodatkowymi językami.",
+        "uk": "З додатковими мовами."
+      }
+    },
+    {
+      "id": "winter-car",
+      "version": 2,
+      "itemCount": 3,
+      "name": {
+        "en": "Winter car kit",
+        "ru": "Зимний набор для машины",
+        "pl": "Zimowy zestaw do auta",
+        "uk": "Зимовий набір для авто"
+      },
+      "description": {
+        "en": "For cold-weather trips: staying warm and getting moving again if the car is stuck.",
+        "ru": "Для поездок в холод: как согреться и снова тронуться, если машина застряла.",
+        "pl": "Na wyjazdy w mróz: jak się ogrzać i ruszyć dalej, gdy auto utknie.",
+        "uk": "Для поїздок у холод: як зігрітися й знову рушити, якщо авто застрягло."
+      }
+    },
+    {
+      "id": "zulu-first",
+      "version": 1,
+      "itemCount": 3,
+      "name": {
+        "en": "Alpha <first> kit",
+        "ru": "Набор <первый>",
+        "pl": "Zestaw <pierwszy>",
+        "uk": "Набір <перший>"
+      },
+      "description": {
+        "en": "Tom & Jerry's \"light\" kit, <5 kg.",
+        "ru": "Лёгкий набор, <5 кг.",
+        "pl": "Lekki zestaw, <5 kg.",
+        "uk": "Легкий набір, <5 кг."
+      }
+    }
+  ]
+}

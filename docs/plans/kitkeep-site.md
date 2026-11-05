@@ -39,50 +39,50 @@ These apply to every task.
 - **HTML:** every template text is inserted through one `escapeHtml()` helper. Pages are written as `<path>/index.html`, so URLs end in `/`. All links are built from the base path `/kitkeep-site/`.
 
 ### Task 1: Project setup
-- [ ] Add `package.json` with the `test`, `check`, `build` and `serve` scripts and `engines.node`, the lockfile, `.nvmrc` (`26`), and `.gitignore` (`dist/`, `node_modules/`).
-- [ ] Add the licenses: `LICENSE` (MIT) for the code, and `templates/LICENSE` (CC0 1.0) for template content.
-- [ ] Add a short `README.md`: what the repo is, the commands, the site configuration, and where the rules are.
-- [ ] Done when: every Validation Command succeeds on a fresh clone.
+- [x] Add `package.json` with the `test`, `check`, `build` and `serve` scripts and `engines.node`, the lockfile, `.nvmrc` (`26`), and `.gitignore` (`dist/`, `node_modules/`).
+- [x] Add the licenses: `LICENSE` (MIT) for the code, and `templates/LICENSE` (CC0 1.0) for template content.
+- [x] Add a short `README.md`: what the repo is, the commands, the site configuration, and where the rules are.
+- [x] Done when: every Validation Command succeeds on a fresh clone.
 
 ### Task 2: Template validator
-- [ ] Parse template files with a hand-written JSON reader that sees the raw text, so it can reject invalid UTF-8, a byte-order mark, repeated keys, `null`, and a `version` written with a decimal point or exponent (domain rules, 2.1, 2.3, 2.4). Standard `JSON.parse` hides these.
-- [ ] Check every rule in domain rules 2.1 (size, encoding), 2.3 (fields, `id` equal to the file name, items, item count, at least one item that isn't retired), 2.4, 2.5 (ids) and 2.6 (languages, lengths, whitespace, NFC, forbidden characters, `{{`, `}}`, `$t(`).
-- [ ] Reject fields not listed in domain rules 2.3, at every level. Inside `name`, `description` and `recommendation`, keys are language codes: the four required ones plus lowercase BCP 47 tags (domain rules, 2.6), checked with `Intl.getCanonicalLocales` and a lowercase test (domain rules, 3, checks).
-- [ ] `templates/v1/` may contain only `<id>.json` files, with `<id>` following 2.5. Anything else (including a `catalog.json`, subfolders or other files) is an error.
-- [ ] Report every problem in every file as `<file>: <JSON path>: <message>` (for example `winter-car.json: items[2].name.pl: ...`), not just the first one, and exit with a non-zero code if there is any.
-- [ ] `npm run check` validates every file in the templates folder.
-- [ ] Add the test template `templates/v1/winter-car.json`: the domain-rules example at `version: 1`, with its three items that aren't retired and without `hand-warmers`. It's test data (domain rules, section 3, before the first release). It's added here because git doesn't keep an empty folder, and `templates/v1/` can't hold a placeholder file, so `npm run check` would otherwise fail on a fresh clone.
-- [ ] Tests: one passing and one failing fixture for each rule, including the edge cases named in the rules (U+00A0 at an edge, U+2028, a lone surrogate, `3.0`, a repeated key, a 61-unit name, an emoji counted as 2 units, every item retired, an unknown field such as `recomendation`). The domain-rules example passes.
-- [ ] Done when: `npm test` and `npm run check` pass, and a broken fixture copied into `templates/v1/` makes `npm run check` fail with a readable message.
+- [x] Parse template files with a hand-written JSON reader that sees the raw text, so it can reject invalid UTF-8, a byte-order mark, repeated keys, `null`, and a `version` written with a decimal point or exponent (domain rules, 2.1, 2.3, 2.4). Standard `JSON.parse` hides these.
+- [x] Check every rule in domain rules 2.1 (size, encoding), 2.3 (fields, `id` equal to the file name, items, item count, at least one item that isn't retired), 2.4, 2.5 (ids) and 2.6 (languages, lengths, whitespace, NFC, forbidden characters, `{{`, `}}`, `$t(`).
+- [x] Reject fields not listed in domain rules 2.3, at every level. Inside `name`, `description` and `recommendation`, keys are language codes: the four required ones plus lowercase BCP 47 tags (domain rules, 2.6), checked with `Intl.getCanonicalLocales` and a lowercase test (domain rules, 3, checks).
+- [x] `templates/v1/` may contain only `<id>.json` files, with `<id>` following 2.5. Anything else (including a `catalog.json`, subfolders or other files) is an error.
+- [x] Report every problem in every file as `<file>: <JSON path>: <message>` (for example `winter-car.json: items[2].name.pl: ...`), not just the first one, and exit with a non-zero code if there is any.
+- [x] `npm run check` validates every file in the templates folder.
+- [x] Add the test template `templates/v1/winter-car.json`: the domain-rules example at `version: 1`, with its three items that aren't retired and without `hand-warmers`. It's test data (domain rules, section 3, before the first release). It's added here because git doesn't keep an empty folder, and `templates/v1/` can't hold a placeholder file, so `npm run check` would otherwise fail on a fresh clone.
+- [x] Tests: one passing and one failing fixture for each rule, including the edge cases named in the rules (U+00A0 at an edge, U+2028, a lone surrogate, `3.0`, a repeated key, a 61-unit name, an emoji counted as 2 units, every item retired, an unknown field such as `recomendation`). The domain-rules example passes.
+- [x] Done when: `npm test` and `npm run check` pass, and a broken fixture copied into `templates/v1/` makes `npm run check` fail with a readable message.
 
 ### Task 3: Catalog generator
-- [ ] `npm run build` first validates the templates folder as in Task 2 and fails if any file is invalid.
-- [ ] It copies every `<id>.json` byte for byte to `dist/templates/v1/`, retired templates included, and generates `dist/templates/v1/catalog.json` (domain rules, 2.2 and 3). The catalog is never committed.
-- [ ] The catalog lists templates that aren't retired, sorted by `id` in code-point order, with `version`, `name` and `description` copied from the file (including extra languages, in the file's key order) and `itemCount` counting items that aren't retired.
-- [ ] Output format: `JSON.stringify(catalog, null, 2)` plus a trailing newline, with keys in this order: `format`, `templates`; in each entry `id`, `version`, `itemCount`, `name`, `description`.
-- [ ] The build fails if the generated catalog breaks a rule in 2.1 or 2.2 (for example, it's over 256 KB).
-- [ ] Tests: empty catalog, a retired template left out, a retired item not counted, sort order, extra languages copied, an oversized catalog failing the build (generated in the test), and each copied template byte-identical to its source.
-- [ ] Done when: `npm test` and `npm run build` pass, and the built catalog for the test fixtures matches the expected file exactly.
+- [x] `npm run build` first validates the templates folder as in Task 2 and fails if any file is invalid.
+- [x] It copies every `<id>.json` byte for byte to `dist/templates/v1/`, retired templates included, and generates `dist/templates/v1/catalog.json` (domain rules, 2.2 and 3). The catalog is never committed.
+- [x] The catalog lists templates that aren't retired, sorted by `id` in code-point order, with `version`, `name` and `description` copied from the file (including extra languages, in the file's key order) and `itemCount` counting items that aren't retired.
+- [x] Output format: `JSON.stringify(catalog, null, 2)` plus a trailing newline, with keys in this order: `format`, `templates`; in each entry `id`, `version`, `itemCount`, `name`, `description`.
+- [x] The build fails if the generated catalog breaks a rule in 2.1 or 2.2 (for example, it's over 256 KB).
+- [x] Tests: empty catalog, a retired template left out, a retired item not counted, sort order, extra languages copied, an oversized catalog failing the build (generated in the test), and each copied template byte-identical to its source.
+- [x] Done when: `npm test` and `npm run build` pass, and the built catalog for the test fixtures matches the expected file exactly.
 
 ### Task 4: Site pages and the test template
-- [ ] Build `/`, `/gallery/` and `/gallery/<id>/` as described in domain rules, section 4:
+- [x] Build `/`, `/gallery/` and `/gallery/<id>/` as described in domain rules, section 4:
   - the home page: what KitKeep is and a link to the gallery (text drafted by Claude, reviewed in the pull request);
   - the gallery list (English, sorted by English name with `Intl.Collator('en')`, ties by `id`, with item count);
   - template pages: items grouped as Essential then Optional, file order within each group, retired items hidden, and no version;
   - pages for retired templates, with their notice and not listed in the gallery.
-- [ ] Language switching on template pages: the page contains one block per app language (`<section lang="en">`, `ru`, `pl`, `uk`) and four buttons (`English`, `Русский`, `Polski`, `Українська`). A small inline script shows English on load and the chosen block on click; the choice isn't remembered or put in the URL. Without JavaScript all four blocks are shown, English first, and the buttons stay hidden because they would do nothing (they're `hidden` in the HTML and the script reveals them). Extra languages aren't shown. Each block holds the template's name, description, items and recommendations; the site's own text, such as "Essential" and "Optional", stays in English (domain rules, section 4).
-- [ ] Shared layout: footer on every page, and links working under `/kitkeep-site/`.
-- [ ] Store buttons: the official App Store and Google Play badges, stored in `src/assets/badges/` (downloaded once from Apple's and Google's marketing pages and used under their guidelines), each shown only when its link is set in `site.config.json`. Add `site.config.json` here, with both links and `supportEmail` set to `null`. The README notes that the badges belong to Apple and Google and aren't under the repo's licenses.
-- [ ] No third-party resources: no analytics, cookies, or fonts, scripts or images from other hosts. Plain CSS in `src/assets/`.
-- [ ] `npm run serve` serves `dist/` under `/kitkeep-site/` with Node's `http` module, for previewing.
-- [ ] Tests on the build output (built from fixtures): the gallery list and order, retired templates and items, grouping, the language blocks, an HTML special character in a template text escaped, store buttons with neither link, one link and both links set (each through `--config`), the footer on every page, and no resource URL (`src`, `<link href>`, CSS `url()`) pointing to another host. Ordinary `<a href>` links may point anywhere.
-- [ ] Done when: `npm test` and `npm run build` pass, and the built site, served with `npm run serve`, shows winter-car correctly in all four languages.
+- [x] Language switching on template pages: the page contains one block per app language (`<section lang="en">`, `ru`, `pl`, `uk`) and four buttons (`English`, `Русский`, `Polski`, `Українська`). A small inline script shows English on load and the chosen block on click; the choice isn't remembered or put in the URL. Without JavaScript all four blocks are shown, English first, and the buttons stay hidden because they would do nothing (they're `hidden` in the HTML and the script reveals them). Extra languages aren't shown. Each block holds the template's name, description, items and recommendations; the site's own text, such as "Essential" and "Optional", stays in English (domain rules, section 4).
+- [x] Shared layout: footer on every page, and links working under `/kitkeep-site/`.
+- [x] Store buttons: the official App Store and Google Play badges, stored in `src/assets/badges/` (downloaded once from Apple's and Google's marketing pages and used under their guidelines), each shown only when its link is set in `site.config.json`. Add `site.config.json` here, with both links and `supportEmail` set to `null`. The README notes that the badges belong to Apple and Google and aren't under the repo's licenses.
+- [x] No third-party resources: no analytics, cookies, or fonts, scripts or images from other hosts. Plain CSS in `src/assets/`.
+- [x] `npm run serve` serves `dist/` under `/kitkeep-site/` with Node's `http` module, for previewing.
+- [x] Tests on the build output (built from fixtures): the gallery list and order, retired templates and items, grouping, the language blocks, an HTML special character in a template text escaped, store buttons with neither link, one link and both links set (each through `--config`), the footer on every page, and no resource URL (`src`, `<link href>`, CSS `url()`) pointing to another host. Ordinary `<a href>` links may point anywhere.
+- [x] Done when: `npm test` and `npm run build` pass, and the built site, served with `npm run serve`, shows winter-car correctly in all four languages.
 
 ### Task 5: Pull request checks and publishing
-- [ ] Before the first merge into `main`, the maintainer sets the Pages source to "GitHub Actions" on GitHub. Pages is currently off for the repo, and the workflow's token can't turn it on, so the deployment fails without this.
-- [ ] `.github/workflows/checks.yml` runs the Validation Commands on every pull request, on `pull_request` (not `pull_request_target`), with `permissions: contents: read`, using the Node version from `.nvmrc`.
-- [ ] `.github/workflows/publish.yml` runs on pushes to `main` (and manually): it runs the Validation Commands, then uploads `dist/` and deploys it to GitHub Pages through the `github-pages` environment, with only the permissions the deployment needs (`contents: read`, `pages: write`, `id-token: write`) and one deployment at a time.
-- [ ] Every action, GitHub's own `actions/*` included, is pinned to a full commit SHA, with the version in a comment. No secrets anywhere (domain rules, 3, pipeline security).
+- [x] Before the first merge into `main`, the maintainer sets the Pages source to "GitHub Actions" on GitHub. Pages is currently off for the repo, and the workflow's token can't turn it on, so the deployment fails without this.
+- [x] `.github/workflows/checks.yml` runs the Validation Commands on every pull request, on `pull_request` (not `pull_request_target`), with `permissions: contents: read`, using the Node version from `.nvmrc`.
+- [x] `.github/workflows/publish.yml` runs on pushes to `main` (and manually): it runs the Validation Commands, then uploads `dist/` and deploys it to GitHub Pages through the `github-pages` environment, with only the permissions the deployment needs (`contents: read`, `pages: write`, `id-token: write`) and one deployment at a time.
+- [x] Every action, GitHub's own `actions/*` included, is pinned to a full commit SHA, with the version in a comment. No secrets anywhere (domain rules, 3, pipeline security).
 - [ ] Done when: a pull request shows the checks passing; a pull request with a broken template shows them failing; and after merge, `https://weberlance.github.io/kitkeep-site/templates/v1/catalog.json` and `.../templates/v1/winter-car.json` are served over HTTPS and match the build.
 
 ### Task 6: Repository settings and contribution files
