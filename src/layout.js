@@ -32,6 +32,7 @@ ${main}
 </main>
 <footer>
 <p>Templates are suggestions from the KitKeep community, not professional safety advice.</p>
+<nav class="footer-links"><a href="${BASE_PATH}privacy/">Privacy</a><a href="${BASE_PATH}support/">Support</a></nav>
 </footer>
 </body>
 </html>

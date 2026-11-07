@@ -85,6 +85,13 @@ footer p {
   margin: 0;
 }
 
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  margin-top: 0.75rem;
+}
+
 .muted {
   color: var(--muted);
 }

@@ -11,15 +11,17 @@ const FIXTURES = join(ROOT, 'test/fixtures/site');
 const APP_STORE = 'https://apps.apple.com/app/id1';
 const GOOGLE_PLAY = 'https://play.google.com/store/apps/details?id=x&hl=en';
 const FOOTER = 'Templates are suggestions from the KitKeep community, not professional safety advice.';
+// Not the real address, so the tests show it comes from the configuration.
+const SUPPORT = 'help@example.com';
 
 let work;
 let configCount = 0;
 
-function build(storeLinks = {}, templates = FIXTURES) {
+function build(settings = {}, templates = FIXTURES) {
   configCount += 1;
   const out = join(work, `out-${configCount}`);
   const config = join(work, `config-${configCount}.json`);
-  writeFileSync(config, JSON.stringify({ appStoreUrl: null, googlePlayUrl: null, supportEmail: null, ...storeLinks }));
+  writeFileSync(config, JSON.stringify({ appStoreUrl: null, googlePlayUrl: null, supportEmail: SUPPORT, ...settings }));
   const result = spawnSync(
     process.execPath,
     ['scripts/build.js', '--out', out, '--config', config, '--templates', templates],
@@ -176,11 +178,15 @@ describe('the built pages', () => {
     assert.ok(page('gallery/index.html').includes('Alpha &lt;first&gt; kit'));
   });
 
-  it('has the footer on every page', () => {
+  it('has the footer, with links to the privacy and support pages, on every page', () => {
     const pages = allFiles(out).filter((file) => file.endsWith('.html'));
-    assert.equal(pages.length, 6);
+    assert.equal(pages.length, 8);
     for (const file of pages) {
-      assert.ok(readFileSync(file, 'utf8').includes(FOOTER), relative(out, file));
+      const footer = readFileSync(file, 'utf8').match(/<footer>([\s\S]*?)<\/footer>/);
+      assert.ok(footer, relative(out, file));
+      assert.ok(footer[1].includes(FOOTER), relative(out, file));
+      assert.ok(footer[1].includes('href="/kitkeep-site/privacy/"'), relative(out, file));
+      assert.ok(footer[1].includes('href="/kitkeep-site/support/"'), relative(out, file));
     }
   });
 
@@ -189,6 +195,10 @@ describe('the built pages', () => {
       const html = readFileSync(file, 'utf8');
       for (const [, url] of html.matchAll(/\s(?:href|src)="([^"]*)"/g)) {
         if (/^https:\/\//.test(url)) continue;
+        if (url.startsWith('mailto:')) {
+          assert.equal(url, `mailto:${SUPPORT}`, relative(out, file));
+          continue;
+        }
         assert.ok(url.startsWith('/kitkeep-site/'), `${relative(out, file)}: ${url}`);
         const target = join(out, url.slice('/kitkeep-site/'.length));
         assert.ok(
@@ -296,7 +306,73 @@ describe('third-party resources', () => {
   it('sets no cookies and has no analytics', () => {
     const out = build();
     for (const file of allFiles(out).filter((name) => name.endsWith('.html'))) {
-      assert.doesNotMatch(readFileSync(file, 'utf8'), /document\.cookie|gtag|analytics/i);
+      const html = readFileSync(file, 'utf8');
+      assert.doesNotMatch(html, /document\.cookie|gtag/i, relative(out, file));
+      // The privacy policy says "no analytics" in its text, so the word is
+      // looked for only where code or a resource could load it.
+      const code = [
+        ...[...html.matchAll(/<script[^>]*>([\s\S]*?)<\/script>/g)].map((match) => match[1]),
+        ...[...html.matchAll(/\s(?:href|src)="([^"]*)"/g)].map((match) => match[1]),
+      ];
+      for (const part of code) assert.doesNotMatch(part, /analytics/i, relative(out, file));
     }
+  });
+});
+
+// Domain rules, sections 5 and 6.
+describe('the privacy and support pages', () => {
+  let out;
+  const page = (path) => readFileSync(join(out, path), 'utf8');
+  // The page's visible text, with tags removed and entities decoded.
+  const text = (html) => html
+    .replace(/<[^>]+>/g, ' ')
+    .replaceAll('&lt;', '<').replaceAll('&gt;', '>').replaceAll('&quot;', '"').replaceAll('&#39;', "'").replaceAll('&amp;', '&')
+    .replace(/\s+/g, ' ');
+  before(() => { out = build(); });
+
+  it('builds both pages with their titles', () => {
+    assert.match(page('privacy/index.html'), /<title>Privacy policy - KitKeep<\/title>/);
+    assert.match(page('support/index.html'), /<title>Support - KitKeep<\/title>/);
+  });
+
+  it('shows the support address from the configuration on both pages', () => {
+    for (const path of ['privacy/index.html', 'support/index.html']) {
+      assert.ok(page(path).includes(`<a href="mailto:${SUPPORT}">${SUPPORT}</a>`), path);
+      assert.ok(!page(path).includes('{{'), path);
+    }
+  });
+
+  it('escapes the support address', () => {
+    const escaped = build({ supportEmail: 'tom&jerry@example.com' });
+    assert.ok(readFileSync(join(escaped, 'support/index.html'), 'utf8').includes('mailto:tom&amp;jerry@example.com'));
+  });
+
+  it('fails the build, writing nothing, when supportEmail is null', () => {
+    const config = join(work, 'no-email.json');
+    const target = join(work, 'no-email-out');
+    writeFileSync(config, JSON.stringify({ appStoreUrl: null, googlePlayUrl: null, supportEmail: null }));
+    const result = spawnSync(process.execPath, ['scripts/build.js', '--out', target, '--config', config, '--templates', FIXTURES], { cwd: ROOT, encoding: 'utf8' });
+    assert.equal(result.status, 1);
+    assert.match(result.stderr, /^src\/pages\/privacy\.html: \$: uses \{\{supportEmail\}\}, but supportEmail is null/m);
+    assert.match(result.stderr, /^src\/pages\/support\.html: \$: uses \{\{supportEmail\}\}, but supportEmail is null/m);
+    assert.ok(!existsSync(target));
+  });
+
+  it('has the agreed Backups and Camera texts from domain rules section 5, word for word', () => {
+    const rules = readFileSync(join(ROOT, 'docs/domain-rules.md'), 'utf8');
+    const policy = text(page('privacy/index.html'));
+    for (const heading of ['Backups', 'Camera']) {
+      const draft = rules.match(new RegExp(`> \\*\\*${heading}\\.\\*\\* (.+)`));
+      assert.ok(draft, `the ${heading} draft is in domain rules`);
+      assert.ok(policy.includes(draft[1]), `the ${heading} text is in the policy`);
+    }
+  });
+
+  it('shows a "Last updated" date on the policy', () => {
+    assert.match(text(page('privacy/index.html')), /Last updated: \d{1,2} (January|February|March|April|May|June|July|August|September|October|November|December) \d{4}/);
+  });
+
+  it('tells how to move kits to a new phone on the support page', () => {
+    assert.match(text(page('support/index.html')), /export your kits in Settings\. Then import the file in KitKeep on the new phone/);
   });
 });
