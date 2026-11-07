@@ -1,7 +1,7 @@
 {
   "format": "kitkeep-template",
   "id": "winter-car",
-  "version": 1,
+  "version": 2,
   "name": {
     "en": "Winter car kit",
     "ru": "Зимний набор для машины",
@@ -31,6 +31,12 @@
       "importance": "optional",
       "name": { "en": "Tow strap", "ru": "Буксировочный трос", "pl": "Linka holownicza", "uk": "Буксирувальний трос" },
       "recommendation": { "en": "At least 4 m, rated for your car's weight", "ru": "Не короче 4 м, под вес вашей машины", "pl": "Co najmniej 4 m, na masę twojego auta", "uk": "Щонайменше 4 м, під вагу вашого авто" }
+    },
+    {
+      "id": "hand-warmers",
+      "importance": "optional",
+      "name": { "en": "Hand warmers", "ru": "Грелки для рук", "pl": "Ogrzewacze do rąk", "uk": "Грілки для рук" },
+      "recommendation": { "en": "2 pairs", "ru": "2 пары", "pl": "2 pary", "uk": "2 пари" }
     }
   ]
 }
