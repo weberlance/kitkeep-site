@@ -95,7 +95,7 @@ These apply to every task.
 - [ ] Account (done by the maintainer): two-factor authentication with a passkey or security key, and recovery codes stored safely.
 - [x] Done when: a direct push to `main` is refused, and a pull request with failing checks can't be merged.
 
-**Remaining (2026-11-07):** the settings are in place and the Done when passed: a direct push to `main` was refused, and PR #7, with a failing `checks` job, couldn't be merged. The account item stays unticked until the maintainer confirms it, and it must be ticked before Task 8 starts.
+**Remaining (2026-11-07):** the settings are in place and the Done when passed: a direct push to `main` was refused, and PR #7, with a failing `checks` job, couldn't be merged. The account item stays unticked until the maintainer confirms it. As an agreed exception, Task 8 may start without it, but it must be ticked before the app's first release.
 
 ### Task 7: Integration test with the app
 Done together with the app project; the app side is judged there.
