@@ -88,14 +88,14 @@ These apply to every task.
 ### Task 6: Repository settings and contribution files
 - [x] Add `.github/CODEOWNERS` covering `templates/` with `@weberlance`.
 - [x] Add `.github/pull_request_template.md` that asks how each language was written (native speaker, fluent speaker, machine translation), asks for a source for the quantities if there is one (for example an official preparedness guide; recommended, not required), and states that contributions are released under CC0.
-- [ ] Settings (done by the maintainer on GitHub):
+- [x] Settings (done by the maintainer on GitHub):
   - a ruleset on `main`: changes only through pull requests, the `checks.yml` job required to pass, no force pushes, no deletion, no required review, and no bypass for anyone, admins included;
   - the `github-pages` environment allows deployments only from `main`;
   - no custom domain on the repo or the `weberlance.github.io` user site.
 - [ ] Account (done by the maintainer): two-factor authentication with a passkey or security key, and recovery codes stored safely.
-- [ ] Done when: a direct push to `main` is refused, and a pull request with failing checks can't be merged.
+- [x] Done when: a direct push to `main` is refused, and a pull request with failing checks can't be merged.
 
-**Postponed (2026-11-05):** the settings, the account item and the Done when above aren't finished, because the maintainer temporarily can't reach the GitHub account's email, which GitHub asks for when creating the ruleset. Until they're finished, `main` isn't protected. As an agreed exception, Task 7 may start without them. They must be finished and ticked before Task 8 starts.
+**Remaining (2026-11-07):** the settings are in place and the Done when passed: a direct push to `main` was refused, and PR #7, with a failing `checks` job, couldn't be merged. The account item stays unticked until the maintainer confirms it, and it must be ticked before Task 8 starts.
 
 ### Task 7: Integration test with the app
 Done together with the app project; the app side is judged there.
