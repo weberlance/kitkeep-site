@@ -1,0 +1,45 @@
+{
+  "format": "kitkeep-template",
+  "id": "other",
+  "version": 1,
+  "name": {
+    "en": "Test kit",
+    "ru": "Тестовый набор",
+    "pl": "Zestaw testowy",
+    "uk": "Тестовий набір"
+  },
+  "description": {
+    "en": "A kit for testing the checks.",
+    "ru": "Набор для проверки.",
+    "pl": "Zestaw do testów.",
+    "uk": "Набір для перевірки."
+  },
+  "items": [
+    {
+      "id": "first-item",
+      "importance": "essential",
+      "name": {
+        "en": "First item",
+        "ru": "Первый",
+        "pl": "Pierwszy",
+        "uk": "Перший"
+      }
+    },
+    {
+      "id": "second-item",
+      "importance": "optional",
+      "name": {
+        "en": "Second item",
+        "ru": "Второй",
+        "pl": "Drugi",
+        "uk": "Другий"
+      },
+      "recommendation": {
+        "en": "2 pieces",
+        "ru": "2 шт.",
+        "pl": "2 szt.",
+        "uk": "2 шт."
+      }
+    }
+  ]
+}

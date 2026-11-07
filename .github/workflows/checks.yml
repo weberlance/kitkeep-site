@@ -17,6 +17,9 @@ jobs:
         with:
           node-version-file: .nvmrc
           package-manager-cache: false
+      # npm run check compares the templates with main (domain rules, 3). The
+      # checkout holds only the pull request's merge commit, so main is fetched.
+      - run: git fetch --no-tags --depth=1 origin +refs/heads/main:refs/remotes/origin/main
       - run: npm ci
       - run: npm test
       - run: npm run check

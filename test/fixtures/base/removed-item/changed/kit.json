@@ -1,0 +1,29 @@
+{
+  "format": "kitkeep-template",
+  "id": "kit",
+  "version": 2,
+  "name": {
+    "en": "Test kit",
+    "ru": "Тестовый набор",
+    "pl": "Zestaw testowy",
+    "uk": "Тестовий набір"
+  },
+  "description": {
+    "en": "A kit for testing the checks.",
+    "ru": "Набор для проверки.",
+    "pl": "Zestaw do testów.",
+    "uk": "Набір для перевірки."
+  },
+  "items": [
+    {
+      "id": "first-item",
+      "importance": "essential",
+      "name": {
+        "en": "First item",
+        "ru": "Первый",
+        "pl": "Pierwszy",
+        "uk": "Перший"
+      }
+    }
+  ]
+}
