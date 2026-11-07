@@ -141,7 +141,7 @@ From this task on, templates in `templates/v1/` are permanent (domain rules, 2.7
 - [x] Done when: `npm test` and `npm run check` pass, and a pull request that deletes an item id from a kit fails its checks.
 
 ### Task 10: Privacy and support pages
-- [ ] Set `supportEmail` in `site.config.json` to `kitkeep.app@gmail.com` (domain rules, section 6). The maintainer creates the mailbox and protects it with a passkey or two-factor authentication, with recovery codes kept with the GitHub ones. The maintainer also signs in at least once a year, because Google may delete a personal account after two years of inactivity and the address must never lapse (domain rules, section 6).
+- [x] Set `supportEmail` in `site.config.json` to `kitkeep.app@gmail.com` (domain rules, section 6). The maintainer creates the mailbox and protects it with a passkey or two-factor authentication, with recovery codes kept with the GitHub ones. The maintainer also signs in at least once a year, because Google may delete a personal account after two years of inactivity and the address must never lapse (domain rules, section 6).
 - [x] Write `src/pages/privacy.html` with everything domain rules section 5 requires, including the backups and camera texts (with ML Kit's technical data on Android), and a "Last updated" date set to the day the pull request is merged.
 - [x] Write `src/pages/support.html` with the support address and the FAQ (moving kits to a new phone). The address is inserted from `site.config.json` through a `{{supportEmail}}` placeholder in both pages.
 - [x] Link both pages from the footer.
