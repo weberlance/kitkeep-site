@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
 import { checkCatalog, generateCatalog } from './catalog.js';
 import { loadConfig } from './config.js';
-import { renderSite } from './site.js';
+import { renderSite, renderTextPages } from './site.js';
 import { formatProblem, validateFolder } from './validator.js';
 
 const ASSETS = fileURLToPath(new URL('../src/assets', import.meta.url));
@@ -45,10 +45,12 @@ const catalogProblems = checkCatalog(catalog);
 if (catalogProblems.length > 0) {
   failWith(catalogProblems.map((problem) => ({ file: 'catalog.json', ...problem })));
 }
-const pages = renderSite(parsedTemplates, config);
+const textPages = renderTextPages(config);
+if (textPages.problems.length > 0) failWith(textPages.problems);
+const pages = [...renderSite(parsedTemplates, config), ...textPages.pages];
 
 // Only what the build owns is removed, because --out can point anywhere.
-for (const owned of ['templates/v1', 'gallery', 'assets', 'index.html']) {
+for (const owned of ['templates/v1', 'gallery', 'privacy', 'support', 'assets', 'index.html']) {
   rmSync(join(out, owned), { recursive: true, force: true });
 }
 

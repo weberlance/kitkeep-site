@@ -1,5 +1,6 @@
 // Renders the site's pages (domain rules, section 4).
 
+import { readFileSync } from 'node:fs';
 import { BASE_PATH, escapeHtml, renderPage } from '../src/layout.js';
 import { isRetired } from './catalog.js';
 
@@ -121,6 +122,43 @@ ${blocks}
 ${storeButtons(config)}
 ${LANGUAGE_SCRIPT}`,
   });
+}
+
+const TEXT_PAGES = [
+  { source: 'privacy.html', path: 'privacy/index.html' },
+  { source: 'support.html', path: 'support/index.html' },
+];
+
+// Renders the hand-written pages in src/pages. Each starts with a plain-text
+// <h1>, which also gives the page title. `{{supportEmail}}` is the only
+// placeholder, and it needs supportEmail set in the site configuration.
+// Returns { pages: [{ path, html }], problems: [{ file, path, message }] }.
+export function renderTextPages(config) {
+  const pages = [];
+  const problems = [];
+  for (const { source, path } of TEXT_PAGES) {
+    const file = `src/pages/${source}`;
+    const content = readFileSync(new URL(`../src/pages/${source}`, import.meta.url), 'utf8');
+    const add = (message) => {
+      if (!problems.some((problem) => problem.file === file && problem.message === message)) {
+        problems.push({ file, path: '', message });
+      }
+    };
+    const heading = /^<h1>([^<]+)<\/h1>/.exec(content);
+    if (!heading) add('must start with a plain-text <h1>, which gives the page title');
+    const main = content.trim().replace(/\{\{\s*([^}]*?)\s*\}\}/g, (placeholder, name) => {
+      if (name !== 'supportEmail') {
+        add(`uses the unknown placeholder ${placeholder}`);
+      } else if (config.supportEmail === null) {
+        add('uses {{supportEmail}}, but supportEmail is null in the site configuration');
+      } else {
+        return escapeHtml(config.supportEmail);
+      }
+      return placeholder;
+    });
+    if (heading) pages.push({ path, html: renderPage({ title: `${heading[1]} - KitKeep`, main }) });
+  }
+  return { pages, problems };
 }
 
 // `templates` holds the parsed template objects, retired ones included.
