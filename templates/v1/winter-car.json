@@ -1,7 +1,7 @@
 {
   "format": "kitkeep-template",
   "id": "winter-car",
-  "version": 2,
+  "version": 3,
   "name": {
     "en": "Winter car kit",
     "ru": "Зимний набор для машины",
@@ -37,6 +37,12 @@
       "importance": "optional",
       "name": { "en": "Hand warmers", "ru": "Грелки для рук", "pl": "Ogrzewacze do rąk", "uk": "Грілки для рук" },
       "recommendation": { "en": "2 pairs", "ru": "2 пары", "pl": "2 pary", "uk": "2 пари" }
+    },
+    {
+      "id": "snow-shovel",
+      "importance": "optional",
+      "name": { "en": "Snow shovel", "ru": "Лопата для снега", "pl": "Łopata do śniegu", "uk": "Лопата для снігу" },
+      "recommendation": { "en": "Foldable, to fit in the boot", "ru": "Складная, чтобы поместилась в багажник", "pl": "Składana, żeby zmieściła się w bagażniku", "uk": "Складна, щоб вмістилася в багажник" }
     }
   ]
 }
