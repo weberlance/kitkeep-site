@@ -100,9 +100,9 @@ These apply to every task.
 ### Task 7: Integration test with the app
 Done together with the app project; the app side is judged there.
 - [x] The app's test build fetches `catalog.json` and `winter-car.json` from GitHub Pages and creates a kit from it.
-- [ ] Through pull requests on this repo, change winter-car (with a higher `version`), add a second test template, then delete one; after each publish the app shows the new catalog correctly.
-- [ ] Record anything learned that affects the data contract in `docs/open-questions.md` (for agreement with the app) or `docs/decisions/`.
-- [ ] Done when: the app project reports that every step above works with the published site.
+- [x] Through pull requests on this repo, change winter-car (with a higher `version`), add a second test template, then delete one; after each publish the app shows the new catalog correctly.
+- [x] Record anything learned that affects the data contract in `docs/open-questions.md` (for agreement with the app) or `docs/decisions/`.
+- [x] Done when: the app project reports that every step above works with the published site.
 
 ### Task 8: First real templates
 - [ ] Add two templates in one pull request: `emergency-medicine-kit-adult` and `emergency-medicine-kit-child`, from the maintainer's draft lists (the `AdultFullFirstAidKit` and `ChildFullFirstAidKit` lists, recorded in `docs/decisions/2026-11-05-plan-review.md`).
