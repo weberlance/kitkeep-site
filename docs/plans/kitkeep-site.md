@@ -125,19 +125,19 @@ Done together with the app project; the app side is judged there.
 
 ### Task 9: Checks against `main`
 From this task on, templates in `templates/v1/` are permanent (domain rules, 2.7 and 3). Merge it before the app's first release.
-- [ ] `npm run check` also compares the templates folder with a base ref (`--base`, default `origin/main`), reading the base files with `git show` and parsing them with the Task 2 reader. It fails when:
+- [x] `npm run check` also compares the templates folder with a base ref (`--base`, default `origin/main`), reading the base files with `git show` and parsing them with the Task 2 reader. It fails when:
   - a template file on the base is missing;
   - an item id on the base is missing from its template;
   - a file's parsed JSON differs from the base without a higher `version`, or a `version` is lower than on the base;
   - an item or template that is retired on the base is no longer retired
 
   (domain rules, 2.7 and 3).
-- [ ] Parsed JSON is compared with object key order ignored and array order kept, so reformatting a file or reordering keys doesn't need a new version.
-- [ ] A template that's new in the pull request is checked only against section 2.
-- [ ] If the base ref doesn't exist, the check fails with a message saying how to fetch it; it's never skipped.
-- [ ] `checks.yml` and `publish.yml` both fetch `main` so the base ref exists in CI; both run `npm run check`.
-- [ ] Tests: a fixture pair (base, changed) for each failure above, and for each case that must pass (reformatting only, reordered keys, a new template, a correctly bumped edit), plus a missing base ref. Each test commits its base files to a temporary git repository and runs the check there.
-- [ ] Update domain rules section 3 to say the checks against `main` are in force, removing the "before the first release" exception.
+- [x] Parsed JSON is compared with object key order ignored and array order kept, so reformatting a file or reordering keys doesn't need a new version.
+- [x] A template that's new in the pull request is checked only against section 2.
+- [x] If the base ref doesn't exist, the check fails with a message saying how to fetch it; it's never skipped.
+- [x] `checks.yml` and `publish.yml` both fetch `main` so the base ref exists in CI; both run `npm run check`.
+- [x] Tests: a fixture pair (base, changed) for each failure above, and for each case that must pass (reformatting only, reordered keys, a new template, a correctly bumped edit), plus a missing base ref. Each test commits its base files to a temporary git repository and runs the check there.
+- [x] Update domain rules section 3 to say the checks against `main` are in force, removing the "before the first release" exception.
 - [ ] Done when: `npm test` and `npm run check` pass, and a pull request that deletes an item id from a kit fails its checks.
 
 ### Task 10: Privacy and support pages

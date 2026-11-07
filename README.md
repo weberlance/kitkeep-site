@@ -10,7 +10,7 @@ Use Node.js 26 (`nvm use` reads `.nvmrc`). There are no dependencies.
 |---|---|
 | `npm ci` | Sets up the project from the lockfile |
 | `npm test` | Runs the tests |
-| `npm run check` | Validates the template files |
+| `npm run check` | Validates the template files and compares them with `origin/main` (run `git fetch origin main` first) |
 | `npm run build` | Builds the site into `dist/` |
 | `npm run serve` | Previews `dist/` under `/kitkeep-site/` |
 

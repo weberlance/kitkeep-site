@@ -20,11 +20,17 @@ describe('GitHub workflows', () => {
       }
     });
 
-    it(`${name} uses no secrets and runs the Validation Commands in order`, () => {
+    it(`${name} uses no secrets, fetches main, and runs the Validation Commands in order`, () => {
       const text = workflow(name);
       assert.doesNotMatch(text, /secrets\./);
       const commands = [...text.matchAll(/- run: (.+)/g)].map((match) => match[1]);
-      assert.deepEqual(commands, ['npm ci', 'npm test', 'npm run check', 'npm run build']);
+      assert.deepEqual(commands, [
+        'git fetch --no-tags --depth=1 origin +refs/heads/main:refs/remotes/origin/main',
+        'npm ci',
+        'npm test',
+        'npm run check',
+        'npm run build',
+      ]);
     });
 
     it(`${name} takes the Node version from .nvmrc`, () => {

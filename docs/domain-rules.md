@@ -170,7 +170,7 @@ These rules apply to every `name`, `description` and `recommendation`, in every 
   - a `CODEOWNERS` entry covers `templates/`, and review from code owners becomes required once there's a second maintainer.
 - **Template files** live in the repo at `templates/v1/<id>.json` and are published exactly as they are.
 - **The catalog is generated** from the template files when the site is built, and isn't kept in the repo, so the two can't disagree.
-- **Before the app's first release:** templates in `templates/v1/` are test data, used to test GitHub Pages and the app's integration. They may be changed or deleted freely, and the checks against `main` below aren't in force yet. They come into force before the app's first release; from then on the rules in 2.7 apply to everything in `v1/`.
+- **Released templates:** every template in `templates/v1/` is released. The rules in 2.7 apply to all of them, and the checks against `main` below are in force. The test templates used before then were deleted before the checks came into force.
 - **Checks on every pull request:**
   - every template file meets section 2, including its size;
   - no template file has a field that section 2.3 doesn't list (inside texts, keys are language codes). This is stricter than the app, which ignores unknown fields, so that a typo like `recomendation` can't be published. Adding a field means changing 2.3 and the checks in the same pull request;
