@@ -1,7 +1,7 @@
 {
   "format": "kitkeep-template",
   "id": "emergency-medicine-kit-adult",
-  "version": 1,
+  "version": 2,
   "name": {
     "en": "Emergency medicine kit for adults",
     "ru": "Тревожная аптечка для взрослых",
@@ -109,12 +109,6 @@
       "id": "blunt-tipped-scissors",
       "importance": "essential",
       "name": { "en": "Blunt-tipped scissors", "ru": "Ножницы с закруглёнными концами", "pl": "Nożyczki z zaokrąglonymi końcami", "uk": "Ножиці із заокругленими кінцями" },
-      "recommendation": { "en": "1 pair", "ru": "1 шт.", "pl": "1 szt.", "uk": "1 шт." }
-    },
-    {
-      "id": "tweezers",
-      "importance": "optional",
-      "name": { "en": "Tweezers", "ru": "Пинцет", "pl": "Pęseta", "uk": "Пінцет" },
       "recommendation": { "en": "1 pair", "ru": "1 шт.", "pl": "1 szt.", "uk": "1 шт." }
     },
     {
