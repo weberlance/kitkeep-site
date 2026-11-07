@@ -243,7 +243,7 @@ The policy covers both the app and the site. It's in English, shows a "Last upda
   If the app project later proves, with a network check on a release build, that the metrics are turned off, the Android sentence and the exception in "Data" are removed.
 - **Notifications:** local, scheduled on the phone.
 - **Web search:** opens Google in the in-app browser with the item's name, so Google sees that search.
-- **More templates:** fetches files from GitHub Pages, so GitHub sees the phone's IP address. Nothing else is sent.
+- **More templates:** fetches files from GitHub Pages when More templates is opened, and when a template is opened there. GitHub sees the phone's IP address, which files were downloaded, and the standard details any app sends with a web request, such as the type of device software. The app sends no account, identifier or kit data.
 - **The website:** no analytics and no cookies; GitHub Pages sees visitors' IP addresses.
 
 ## 6. Support contact
