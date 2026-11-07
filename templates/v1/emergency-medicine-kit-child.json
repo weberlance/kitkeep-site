@@ -1,0 +1,181 @@
+{
+  "format": "kitkeep-template",
+  "id": "emergency-medicine-kit-child",
+  "version": 1,
+  "name": {
+    "en": "Emergency medicine kit for children",
+    "ru": "Тревожная аптечка для детей",
+    "pl": "Apteczka ewakuacyjna dla dzieci",
+    "uk": "Тривожна аптечка для дітей"
+  },
+  "description": {
+    "en": "A first aid kit for a child, ready to take with you in an emergency: children's forms of basic medicines, dressings and tools, plus the child's prescribed medications and a medical information card.",
+    "ru": "Аптечка для ребёнка, которую можно сразу взять с собой в чрезвычайной ситуации: детские формы базовых лекарств, перевязочные материалы и инструменты, а также назначенные ребёнку лекарства и карточка с медицинской информацией.",
+    "pl": "Apteczka dla dziecka gotowa do zabrania w sytuacji kryzysowej: podstawowe leki w postaci dla dzieci, opatrunki i narzędzia, a także leki przepisane dziecku i karta informacji medycznej.",
+    "uk": "Аптечка для дитини, яку можна одразу взяти з собою в надзвичайній ситуації: дитячі форми базових ліків, перев’язувальні матеріали та інструменти, а також призначені дитині ліки й картка з медичною інформацією."
+  },
+  "items": [
+    {
+      "id": "paracetamol",
+      "importance": "essential",
+      "name": { "en": "Paracetamol", "ru": "Парацетамол", "pl": "Paracetamol", "uk": "Парацетамол" },
+      "recommendation": { "en": "1 original pack of an age-appropriate children's formulation; sufficient for up to 72 hours based on body weight and product instructions", "ru": "1 оригинальная упаковка детской формы по возрасту; на срок до 72 часов с учётом веса ребёнка и инструкции", "pl": "1 oryginalne opakowanie postaci dla dzieci odpowiedniej do wieku; na maks. 72 godziny według masy ciała i ulotki", "uk": "1 оригінальна упаковка дитячої форми за віком; на строк до 72 годин з урахуванням ваги дитини та інструкції" }
+    },
+    {
+      "id": "ibuprofen",
+      "importance": "essential",
+      "name": { "en": "Ibuprofen", "ru": "Ибупрофен", "pl": "Ibuprofen", "uk": "Ібупрофен" },
+      "recommendation": { "en": "1 original pack of an age-appropriate children's formulation; sufficient for up to 72 hours based on body weight and product instructions", "ru": "1 оригинальная упаковка детской формы по возрасту; на срок до 72 часов с учётом веса ребёнка и инструкции", "pl": "1 oryginalne opakowanie postaci dla dzieci odpowiedniej do wieku; na maks. 72 godziny według masy ciała i ulotki", "uk": "1 оригінальна упаковка дитячої форми за віком; на строк до 72 годин з урахуванням ваги дитини та інструкції" }
+    },
+    {
+      "id": "oral-dosing-syringes",
+      "importance": "essential",
+      "name": { "en": "Oral dosing syringes", "ru": "Шприцы-дозаторы для приёма внутрь", "pl": "Strzykawki doustne do dawkowania", "uk": "Шприци-дозатори для прийому всередину" },
+      "recommendation": { "en": "1 needle-free oral syringe per liquid medicine", "ru": "1 шприц без иглы на каждое жидкое лекарство", "pl": "1 strzykawka bez igły na każdy lek w płynie", "uk": "1 шприц без голки на кожні рідкі ліки" }
+    },
+    {
+      "id": "antihistamine",
+      "importance": "essential",
+      "name": { "en": "Antihistamine", "ru": "Антигистаминное средство", "pl": "Lek przeciwhistaminowy", "uk": "Антигістамінний засіб" },
+      "recommendation": { "en": "1 small original pack of a second-generation antihistamine in an age-appropriate formulation", "ru": "1 небольшая оригинальная упаковка антигистаминного средства второго поколения в детской форме по возрасту", "pl": "1 małe oryginalne opakowanie leku przeciwhistaminowego II generacji w postaci odpowiedniej do wieku", "uk": "1 невелика оригінальна упаковка антигістамінного засобу другого покоління в дитячій формі за віком" }
+    },
+    {
+      "id": "nitrile-gloves",
+      "importance": "essential",
+      "name": { "en": "Nitrile gloves", "ru": "Нитриловые перчатки", "pl": "Rękawiczki nitrylowe", "uk": "Нітрилові рукавички" },
+      "recommendation": { "en": "4 pairs, sized for the caregiver", "ru": "4 пары, по размеру взрослого", "pl": "4 pary, w rozmiarze opiekuna", "uk": "4 пари, за розміром дорослого" }
+    },
+    {
+      "id": "sterile-gauze-pads",
+      "importance": "essential",
+      "name": { "en": "Sterile gauze pads", "ru": "Стерильные марлевые салфетки", "pl": "Jałowe kompresy gazowe", "uk": "Стерильні марлеві серветки" },
+      "recommendation": { "en": "5 individually wrapped pads each of 5 × 5 cm and 10 × 10 cm", "ru": "По 5 салфеток в индивидуальной упаковке размером 5 × 5 см и 10 × 10 см", "pl": "Po 5 pojedynczo pakowanych kompresów 5 × 5 cm i 10 × 10 cm", "uk": "По 5 серветок в індивідуальній упаковці розміром 5 × 5 см і 10 × 10 см" }
+    },
+    {
+      "id": "sterile-non-adherent-dressings",
+      "importance": "essential",
+      "name": { "en": "Sterile non-adherent dressings", "ru": "Стерильные неприлипающие повязки", "pl": "Jałowe opatrunki nieprzywierające", "uk": "Стерильні неприлипні пов’язки" },
+      "recommendation": { "en": "3", "ru": "3", "pl": "3", "uk": "3" }
+    },
+    {
+      "id": "large-sterile-absorbent-dressings",
+      "importance": "essential",
+      "name": { "en": "Large sterile absorbent dressings", "ru": "Большие стерильные впитывающие повязки", "pl": "Duże jałowe opatrunki chłonne", "uk": "Великі стерильні абсорбувальні пов’язки" },
+      "recommendation": { "en": "2", "ru": "2", "pl": "2", "uk": "2" }
+    },
+    {
+      "id": "gauze-bandages",
+      "importance": "essential",
+      "name": { "en": "Gauze bandages", "ru": "Марлевые бинты", "pl": "Bandaże z gazy", "uk": "Марлеві бинти" },
+      "recommendation": { "en": "2 rolls each of 5 cm and 10 cm width", "ru": "По 2 рулона шириной 5 см и 10 см", "pl": "Po 2 rolki o szerokości 5 cm i 10 cm", "uk": "По 2 рулони завширшки 5 см і 10 см" }
+    },
+    {
+      "id": "sensitive-skin-medical-tape",
+      "importance": "essential",
+      "name": { "en": "Sensitive-skin medical tape", "ru": "Лейкопластырь для чувствительной кожи", "pl": "Przylepiec do skóry wrażliwej", "uk": "Лейкопластир для чутливої шкіри" },
+      "recommendation": { "en": "1 roll", "ru": "1 рулон", "pl": "1 rolka", "uk": "1 рулон" }
+    },
+    {
+      "id": "adhesive-bandages",
+      "importance": "essential",
+      "name": { "en": "Adhesive bandages", "ru": "Пластыри", "pl": "Plastry z opatrunkiem", "uk": "Пластирі" },
+      "recommendation": { "en": "15 assorted sizes, including small sizes", "ru": "15 шт. разных размеров, включая маленькие", "pl": "15 szt. w różnych rozmiarach, także małych", "uk": "15 шт. різних розмірів, зокрема маленькі" }
+    },
+    {
+      "id": "blister-plasters",
+      "importance": "optional",
+      "name": { "en": "Blister plasters", "ru": "Пластыри от мозолей", "pl": "Plastry na pęcherze", "uk": "Пластирі від мозолів" },
+      "recommendation": { "en": "3, for a child who walks", "ru": "3, если ребёнок уже ходит", "pl": "3, jeśli dziecko już chodzi", "uk": "3, якщо дитина вже ходить" }
+    },
+    {
+      "id": "elastic-bandage",
+      "importance": "optional",
+      "name": { "en": "Elastic bandage", "ru": "Эластичный бинт", "pl": "Bandaż elastyczny", "uk": "Еластичний бинт" },
+      "recommendation": { "en": "1 roll", "ru": "1 рулон", "pl": "1 rolka", "uk": "1 рулон" }
+    },
+    {
+      "id": "triangular-bandage",
+      "importance": "optional",
+      "name": { "en": "Triangular bandage", "ru": "Косыночная повязка", "pl": "Chusta trójkątna", "uk": "Косинкова пов’язка" },
+      "recommendation": { "en": "1", "ru": "1", "pl": "1", "uk": "1" }
+    },
+    {
+      "id": "sterile-saline",
+      "importance": "essential",
+      "name": { "en": "Sterile saline", "ru": "Стерильный физраствор", "pl": "Jałowa sól fizjologiczna", "uk": "Стерильний фізрозчин" },
+      "recommendation": { "en": "5 single-use plastic containers, 10 mL each", "ru": "5 одноразовых пластиковых контейнеров по 10 мл", "pl": "5 jednorazowych plastikowych pojemników po 10 ml", "uk": "5 одноразових пластикових контейнерів по 10 мл" }
+    },
+    {
+      "id": "hand-sanitizer",
+      "importance": "optional",
+      "name": { "en": "Hand sanitizer", "ru": "Антисептик для рук", "pl": "Płyn do dezynfekcji rąk", "uk": "Антисептик для рук" },
+      "recommendation": { "en": "30 mL", "ru": "30 мл", "pl": "30 ml", "uk": "30 мл" }
+    },
+    {
+      "id": "blunt-tipped-scissors",
+      "importance": "essential",
+      "name": { "en": "Blunt-tipped scissors", "ru": "Ножницы с закруглёнными концами", "pl": "Nożyczki z zaokrąglonymi końcami", "uk": "Ножиці із заокругленими кінцями" },
+      "recommendation": { "en": "1 pair", "ru": "1 шт.", "pl": "1 szt.", "uk": "1 шт." }
+    },
+    {
+      "id": "tweezers",
+      "importance": "optional",
+      "name": { "en": "Tweezers", "ru": "Пинцет", "pl": "Pęseta", "uk": "Пінцет" },
+      "recommendation": { "en": "1 pair", "ru": "1 шт.", "pl": "1 szt.", "uk": "1 шт." }
+    },
+    {
+      "id": "digital-thermometer",
+      "importance": "essential",
+      "name": { "en": "Digital thermometer", "ru": "Электронный термометр", "pl": "Termometr elektroniczny", "uk": "Електронний термометр" },
+      "recommendation": { "en": "1", "ru": "1", "pl": "1", "uk": "1" }
+    },
+    {
+      "id": "instant-cold-pack",
+      "importance": "optional",
+      "name": { "en": "Instant cold pack", "ru": "Охлаждающий пакет мгновенного действия", "pl": "Kompres chłodzący natychmiastowy", "uk": "Охолоджувальний пакет миттєвої дії" },
+      "recommendation": { "en": "1", "ru": "1", "pl": "1", "uk": "1" }
+    },
+    {
+      "id": "emergency-thermal-blanket",
+      "importance": "essential",
+      "name": { "en": "Emergency thermal blanket", "ru": "Спасательное термоодеяло", "pl": "Koc ratunkowy termiczny", "uk": "Рятувальна термоковдра" },
+      "recommendation": { "en": "1", "ru": "1", "pl": "1", "uk": "1" }
+    },
+    {
+      "id": "waste-bags",
+      "importance": "optional",
+      "name": { "en": "Waste bags", "ru": "Пакеты для мусора", "pl": "Worki na odpady", "uk": "Пакети для сміття" },
+      "recommendation": { "en": "2", "ru": "2", "pl": "2", "uk": "2" }
+    },
+    {
+      "id": "first-aid-instructions",
+      "importance": "optional",
+      "name": { "en": "First aid instructions", "ru": "Инструкция по первой помощи", "pl": "Instrukcja pierwszej pomocy", "uk": "Інструкція з першої допомоги" },
+      "recommendation": { "en": "1 official Pediatric First Aid Guide", "ru": "1 официальное руководство по первой помощи детям", "pl": "1 oficjalny poradnik pierwszej pomocy dzieciom", "uk": "1 офіційний посібник з першої допомоги дітям" }
+    },
+    {
+      "id": "medication-instructions-and-record",
+      "importance": "optional",
+      "name": { "en": "Medication instructions and record", "ru": "Инструкции к лекарствам и журнал приёма", "pl": "Ulotki leków i dziennik podawania", "uk": "Інструкції до ліків і журнал прийому" },
+      "recommendation": { "en": "Product leaflets, medication administration record and pencil", "ru": "Листки-вкладыши, журнал приёма лекарств и карандаш", "pl": "Ulotki leków, dziennik podawania leków i ołówek", "uk": "Листки-вкладиші, журнал прийому ліків і олівець" }
+    },
+    {
+      "id": "water-resistant-first-aid-pouch",
+      "importance": "essential",
+      "name": { "en": "Water-resistant first aid pouch", "ru": "Влагостойкий чехол для аптечки", "pl": "Wodoodporna saszetka na apteczkę", "uk": "Вологостійкий чохол для аптечки" },
+      "recommendation": { "en": "1", "ru": "1", "pl": "1", "uk": "1" }
+    },
+    {
+      "id": "personal-medications",
+      "importance": "essential",
+      "name": { "en": "Personal medications", "ru": "Личные лекарства", "pl": "Leki osobiste", "uk": "Особисті ліки" },
+      "recommendation": { "en": "Prescribed regular and emergency medications; preferably a 7-day supply", "ru": "Назначенные постоянные и экстренные лекарства; желательно запас на 7 дней", "pl": "Przepisane leki stałe i ratunkowe; najlepiej zapas na 7 dni", "uk": "Призначені постійні та екстрені ліки; бажано запас на 7 днів" }
+    },
+    {
+      "id": "medical-information-card",
+      "importance": "essential",
+      "name": { "en": "Medical information card", "ru": "Карточка с медицинской информацией", "pl": "Karta informacji medycznej", "uk": "Картка з медичною інформацією" },
+      "recommendation": { "en": "Age, current weight, allergies or unknown allergy status, current medications, medical conditions; prescribed doses, with concentration and mL for liquids", "ru": "Возраст, текущий вес, аллергии или отметка, что они неизвестны; лекарства, заболевания; назначенные дозы, для жидких лекарств с концентрацией и объёмом в мл", "pl": "Wiek, aktualna masa ciała, alergie lub informacja, że są nieznane; leki, choroby; przepisane dawki, dla leków w płynie ze stężeniem i ilością w ml", "uk": "Вік, поточна вага, алергії або позначка, що вони невідомі; ліки, захворювання; призначені дози, для рідких ліків із концентрацією та об’ємом у мл" }
+    }
+  ]
+}

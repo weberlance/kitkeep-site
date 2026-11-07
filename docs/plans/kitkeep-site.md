@@ -105,8 +105,8 @@ Done together with the app project; the app side is judged there.
 - [x] Done when: the app project reports that every step above works with the published site.
 
 ### Task 8: First real templates
-- [ ] Add two templates in one pull request: `emergency-medicine-kit-adult` and `emergency-medicine-kit-child`, from the maintainer's draft lists (the `AdultFullFirstAidKit` and `ChildFullFirstAidKit` lists, recorded in `docs/decisions/2026-11-05-plan-review.md`).
-- [ ] Names:
+- [x] Add two templates in one pull request: `emergency-medicine-kit-adult` and `emergency-medicine-kit-child`, from the maintainer's draft lists (the `AdultFullFirstAidKit` and `ChildFullFirstAidKit` lists, recorded in `docs/decisions/2026-11-05-plan-review.md`).
+- [x] Names:
 
   | | Adult | Child |
   |---|---|---|
@@ -115,10 +115,10 @@ Done together with the app project; the app side is judged there.
   | pl | Apteczka ewakuacyjna dla dorosłych | Apteczka ewakuacyjna dla dzieci |
   | uk | Тривожна аптечка для дорослих | Тривожна аптечка для дітей |
 
-- [ ] Item ids are the kebab-case form of the draft keys (for example `nitrile-gloves`, `sterile-non-adherent-dressings`), and the recommendations are the draft texts. Texts that are too long in any language are shortened (for example the child kit's medical information card).
-- [ ] Importance: essential items are personal medications, medical information card, paracetamol, ibuprofen, antihistamine, nitrile gloves, sterile gauze pads, sterile non-adherent dressings, large sterile absorbent dressings, gauze bandages, medical adhesive tape (sensitive-skin medical tape in the child kit), adhesive bandages, sterile saline, blunt-tipped scissors, digital thermometer, emergency thermal blanket, water-resistant first aid pouch, and, in the child kit, oral dosing syringes. Everything else is optional. That gives 17 essential and 9 optional items for adults, and 18 essential and 9 optional for children.
+- [x] Item ids are the kebab-case form of the draft keys (for example `nitrile-gloves`, `sterile-non-adherent-dressings`), and the recommendations are the draft texts. Texts that are too long in any language are shortened (for example the child kit's medical information card).
+- [x] Importance: essential items are personal medications, medical information card, paracetamol, ibuprofen, antihistamine, nitrile gloves, sterile gauze pads, sterile non-adherent dressings, large sterile absorbent dressings, gauze bandages, medical adhesive tape (sensitive-skin medical tape in the child kit), adhesive bandages, sterile saline, blunt-tipped scissors, digital thermometer, emergency thermal blanket, water-resistant first aid pouch, and, in the child kit, oral dosing syringes. Everything else is optional. That gives 17 essential and 9 optional items for adults, and 18 essential and 9 optional for children.
 - [ ] Descriptions and the ru/pl/uk translations drafted by Claude; the pull request template filled in (machine-assisted translation). The maintainer checks the languages they know and spot-checks the others. Sources are linked if there are any (recommended, not required).
-- [ ] Delete every test template from `templates/v1/` in the same pull request.
+- [x] Delete every test template from `templates/v1/` in the same pull request.
 - [ ] Done when: the pull request is merged with every check passing, `templates/v1/` holds only the two kits, and both appear in the published catalog and on their gallery pages.
 
 ### Task 9: Checks against `main`
