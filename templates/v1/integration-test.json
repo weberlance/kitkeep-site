@@ -1,0 +1,30 @@
+{
+  "format": "kitkeep-template",
+  "id": "integration-test",
+  "version": 1,
+  "name": {
+    "en": "Integration test kit",
+    "ru": "Тестовый набор",
+    "pl": "Zestaw testowy",
+    "uk": "Тестовий набір"
+  },
+  "description": {
+    "en": "A temporary kit for testing the app with the site. It will be removed.",
+    "ru": "Временный набор для проверки приложения с сайтом. Он будет удалён.",
+    "pl": "Tymczasowy zestaw do testowania aplikacji ze stroną. Zostanie usunięty.",
+    "uk": "Тимчасовий набір для перевірки застосунку із сайтом. Його буде видалено."
+  },
+  "items": [
+    {
+      "id": "flashlight",
+      "importance": "essential",
+      "name": { "en": "Flashlight", "ru": "Фонарик", "pl": "Latarka", "uk": "Ліхтарик" },
+      "recommendation": { "en": "With spare batteries", "ru": "С запасными батарейками", "pl": "Z zapasowymi bateriami", "uk": "Із запасними батарейками" }
+    },
+    {
+      "id": "water",
+      "importance": "optional",
+      "name": { "en": "Drinking water", "ru": "Питьевая вода", "pl": "Woda pitna", "uk": "Питна вода" }
+    }
+  ]
+}
