@@ -138,7 +138,7 @@ From this task on, templates in `templates/v1/` are permanent (domain rules, 2.7
 - [x] `checks.yml` and `publish.yml` both fetch `main` so the base ref exists in CI; both run `npm run check`.
 - [x] Tests: a fixture pair (base, changed) for each failure above, and for each case that must pass (reformatting only, reordered keys, a new template, a correctly bumped edit), plus a missing base ref. Each test commits its base files to a temporary git repository and runs the check there.
 - [x] Update domain rules section 3 to say the checks against `main` are in force, removing the "before the first release" exception.
-- [ ] Done when: `npm test` and `npm run check` pass, and a pull request that deletes an item id from a kit fails its checks.
+- [x] Done when: `npm test` and `npm run check` pass, and a pull request that deletes an item id from a kit fails its checks.
 
 ### Task 10: Privacy and support pages
 - [ ] Set `supportEmail` in `site.config.json` to `kitkeep.app@gmail.com` (domain rules, section 6). The maintainer creates the mailbox and protects it with a passkey or two-factor authentication, with recovery codes kept with the GitHub ones. The maintainer also signs in at least once a year, because Google may delete a personal account after two years of inactivity and the address must never lapse (domain rules, section 6).
