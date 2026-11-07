@@ -1,0 +1,175 @@
+{
+  "format": "kitkeep-template",
+  "id": "emergency-medicine-kit-adult",
+  "version": 1,
+  "name": {
+    "en": "Emergency medicine kit for adults",
+    "ru": "Тревожная аптечка для взрослых",
+    "pl": "Apteczka ewakuacyjna dla dorosłych",
+    "uk": "Тривожна аптечка для дорослих"
+  },
+  "description": {
+    "en": "A first aid kit ready to take with you in an emergency: basic medicines, dressings and tools, plus your own prescribed medications and a medical information card.",
+    "ru": "Аптечка, которую можно сразу взять с собой в чрезвычайной ситуации: базовые лекарства, перевязочные материалы и инструменты, а также ваши назначенные лекарства и карточка с медицинской информацией.",
+    "pl": "Apteczka gotowa do zabrania w sytuacji kryzysowej: podstawowe leki, opatrunki i narzędzia, a także twoje przepisane leki i karta informacji medycznej.",
+    "uk": "Аптечка, яку можна одразу взяти з собою в надзвичайній ситуації: базові ліки, перев’язувальні матеріали та інструменти, а також ваші призначені ліки й картка з медичною інформацією."
+  },
+  "items": [
+    {
+      "id": "paracetamol",
+      "importance": "essential",
+      "name": { "en": "Paracetamol", "ru": "Парацетамол", "pl": "Paracetamol", "uk": "Парацетамол" },
+      "recommendation": { "en": "12 tablets, 500 mg each", "ru": "12 таблеток по 500 мг", "pl": "12 tabletek po 500 mg", "uk": "12 таблеток по 500 мг" }
+    },
+    {
+      "id": "ibuprofen",
+      "importance": "essential",
+      "name": { "en": "Ibuprofen", "ru": "Ибупрофен", "pl": "Ibuprofen", "uk": "Ібупрофен" },
+      "recommendation": { "en": "12 tablets, 200 mg each", "ru": "12 таблеток по 200 мг", "pl": "12 tabletek po 200 mg", "uk": "12 таблеток по 200 мг" }
+    },
+    {
+      "id": "antihistamine",
+      "importance": "essential",
+      "name": { "en": "Antihistamine", "ru": "Антигистаминное средство", "pl": "Lek przeciwhistaminowy", "uk": "Антигістамінний засіб" },
+      "recommendation": { "en": "1 small pack of cetirizine or loratadine", "ru": "1 небольшая упаковка цетиризина или лоратадина", "pl": "1 małe opakowanie cetyryzyny lub loratadyny", "uk": "1 невелика упаковка цетиризину або лоратадину" }
+    },
+    {
+      "id": "nitrile-gloves",
+      "importance": "essential",
+      "name": { "en": "Nitrile gloves", "ru": "Нитриловые перчатки", "pl": "Rękawiczki nitrylowe", "uk": "Нітрилові рукавички" },
+      "recommendation": { "en": "4 pairs", "ru": "4 пары", "pl": "4 pary", "uk": "4 пари" }
+    },
+    {
+      "id": "sterile-gauze-pads",
+      "importance": "essential",
+      "name": { "en": "Sterile gauze pads", "ru": "Стерильные марлевые салфетки", "pl": "Jałowe kompresy gazowe", "uk": "Стерильні марлеві серветки" },
+      "recommendation": { "en": "10 individually wrapped pads, approximately 10 × 10 cm", "ru": "10 салфеток в индивидуальной упаковке, примерно 10 × 10 см", "pl": "10 pojedynczo pakowanych kompresów, ok. 10 × 10 cm", "uk": "10 серветок в індивідуальній упаковці, приблизно 10 × 10 см" }
+    },
+    {
+      "id": "sterile-non-adherent-dressings",
+      "importance": "essential",
+      "name": { "en": "Sterile non-adherent dressings", "ru": "Стерильные неприлипающие повязки", "pl": "Jałowe opatrunki nieprzywierające", "uk": "Стерильні неприлипні пов’язки" },
+      "recommendation": { "en": "3", "ru": "3", "pl": "3", "uk": "3" }
+    },
+    {
+      "id": "large-sterile-absorbent-dressings",
+      "importance": "essential",
+      "name": { "en": "Large sterile absorbent dressings", "ru": "Большие стерильные впитывающие повязки", "pl": "Duże jałowe opatrunki chłonne", "uk": "Великі стерильні абсорбувальні пов’язки" },
+      "recommendation": { "en": "2, approximately 10 × 20 cm", "ru": "2, примерно 10 × 20 см", "pl": "2, ok. 10 × 20 cm", "uk": "2, приблизно 10 × 20 см" }
+    },
+    {
+      "id": "gauze-bandages",
+      "importance": "essential",
+      "name": { "en": "Gauze bandages", "ru": "Марлевые бинты", "pl": "Bandaże z gazy", "uk": "Марлеві бинти" },
+      "recommendation": { "en": "2 rolls each of 5 cm and 10 cm width", "ru": "По 2 рулона шириной 5 см и 10 см", "pl": "Po 2 rolki o szerokości 5 cm i 10 cm", "uk": "По 2 рулони завширшки 5 см і 10 см" }
+    },
+    {
+      "id": "medical-adhesive-tape",
+      "importance": "essential",
+      "name": { "en": "Medical adhesive tape", "ru": "Медицинский лейкопластырь в рулоне", "pl": "Przylepiec medyczny", "uk": "Медичний лейкопластир у рулоні" },
+      "recommendation": { "en": "1 roll, approximately 2.5 cm × 5 m", "ru": "1 рулон, примерно 2,5 см × 5 м", "pl": "1 rolka, ok. 2,5 cm × 5 m", "uk": "1 рулон, приблизно 2,5 см × 5 м" }
+    },
+    {
+      "id": "adhesive-bandages",
+      "importance": "essential",
+      "name": { "en": "Adhesive bandages", "ru": "Пластыри", "pl": "Plastry z opatrunkiem", "uk": "Пластирі" },
+      "recommendation": { "en": "15 assorted sizes", "ru": "15 шт. разных размеров", "pl": "15 szt. w różnych rozmiarach", "uk": "15 шт. різних розмірів" }
+    },
+    {
+      "id": "hydrocolloid-blister-plasters",
+      "importance": "optional",
+      "name": { "en": "Hydrocolloid blister plasters", "ru": "Гидроколлоидные пластыри от мозолей", "pl": "Plastry hydrokoloidowe na pęcherze", "uk": "Гідроколоїдні пластирі від мозолів" },
+      "recommendation": { "en": "4", "ru": "4", "pl": "4", "uk": "4" }
+    },
+    {
+      "id": "elastic-bandage",
+      "importance": "optional",
+      "name": { "en": "Elastic bandage", "ru": "Эластичный бинт", "pl": "Bandaż elastyczny", "uk": "Еластичний бинт" },
+      "recommendation": { "en": "1 roll", "ru": "1 рулон", "pl": "1 rolka", "uk": "1 рулон" }
+    },
+    {
+      "id": "triangular-bandage",
+      "importance": "optional",
+      "name": { "en": "Triangular bandage", "ru": "Косыночная повязка", "pl": "Chusta trójkątna", "uk": "Косинкова пов’язка" },
+      "recommendation": { "en": "1", "ru": "1", "pl": "1", "uk": "1" }
+    },
+    {
+      "id": "sterile-saline",
+      "importance": "essential",
+      "name": { "en": "Sterile saline", "ru": "Стерильный физраствор", "pl": "Jałowa sól fizjologiczna", "uk": "Стерильний фізрозчин" },
+      "recommendation": { "en": "5 single-use plastic containers, 10 mL each", "ru": "5 одноразовых пластиковых контейнеров по 10 мл", "pl": "5 jednorazowych plastikowych pojemników po 10 ml", "uk": "5 одноразових пластикових контейнерів по 10 мл" }
+    },
+    {
+      "id": "hand-sanitizer",
+      "importance": "optional",
+      "name": { "en": "Hand sanitizer", "ru": "Антисептик для рук", "pl": "Płyn do dezynfekcji rąk", "uk": "Антисептик для рук" },
+      "recommendation": { "en": "30 mL", "ru": "30 мл", "pl": "30 ml", "uk": "30 мл" }
+    },
+    {
+      "id": "blunt-tipped-scissors",
+      "importance": "essential",
+      "name": { "en": "Blunt-tipped scissors", "ru": "Ножницы с закруглёнными концами", "pl": "Nożyczki z zaokrąglonymi końcami", "uk": "Ножиці із заокругленими кінцями" },
+      "recommendation": { "en": "1 pair", "ru": "1 шт.", "pl": "1 szt.", "uk": "1 шт." }
+    },
+    {
+      "id": "tweezers",
+      "importance": "optional",
+      "name": { "en": "Tweezers", "ru": "Пинцет", "pl": "Pęseta", "uk": "Пінцет" },
+      "recommendation": { "en": "1 pair", "ru": "1 шт.", "pl": "1 szt.", "uk": "1 шт." }
+    },
+    {
+      "id": "digital-thermometer",
+      "importance": "essential",
+      "name": { "en": "Digital thermometer", "ru": "Электронный термометр", "pl": "Termometr elektroniczny", "uk": "Електронний термометр" },
+      "recommendation": { "en": "1", "ru": "1", "pl": "1", "uk": "1" }
+    },
+    {
+      "id": "instant-cold-pack",
+      "importance": "optional",
+      "name": { "en": "Instant cold pack", "ru": "Охлаждающий пакет мгновенного действия", "pl": "Kompres chłodzący natychmiastowy", "uk": "Охолоджувальний пакет миттєвої дії" },
+      "recommendation": { "en": "1", "ru": "1", "pl": "1", "uk": "1" }
+    },
+    {
+      "id": "emergency-thermal-blanket",
+      "importance": "essential",
+      "name": { "en": "Emergency thermal blanket", "ru": "Спасательное термоодеяло", "pl": "Koc ratunkowy termiczny", "uk": "Рятувальна термоковдра" },
+      "recommendation": { "en": "1", "ru": "1", "pl": "1", "uk": "1" }
+    },
+    {
+      "id": "waste-bags",
+      "importance": "optional",
+      "name": { "en": "Waste bags", "ru": "Пакеты для мусора", "pl": "Worki na odpady", "uk": "Пакети для сміття" },
+      "recommendation": { "en": "2", "ru": "2", "pl": "2", "uk": "2" }
+    },
+    {
+      "id": "first-aid-instructions",
+      "importance": "optional",
+      "name": { "en": "First aid instructions", "ru": "Инструкция по первой помощи", "pl": "Instrukcja pierwszej pomocy", "uk": "Інструкція з першої допомоги" },
+      "recommendation": { "en": "1 official First Aid Guide", "ru": "1 официальное руководство по первой помощи", "pl": "1 oficjalny poradnik pierwszej pomocy", "uk": "1 офіційний посібник з першої допомоги" }
+    },
+    {
+      "id": "medication-instructions-and-record",
+      "importance": "optional",
+      "name": { "en": "Medication instructions and record", "ru": "Инструкции к лекарствам и журнал приёма", "pl": "Ulotki leków i dziennik podawania", "uk": "Інструкції до ліків і журнал прийому" },
+      "recommendation": { "en": "Product leaflets, medication administration record and pencil", "ru": "Листки-вкладыши, журнал приёма лекарств и карандаш", "pl": "Ulotki leków, dziennik podawania leków i ołówek", "uk": "Листки-вкладиші, журнал прийому ліків і олівець" }
+    },
+    {
+      "id": "water-resistant-first-aid-pouch",
+      "importance": "essential",
+      "name": { "en": "Water-resistant first aid pouch", "ru": "Влагостойкий чехол для аптечки", "pl": "Wodoodporna saszetka na apteczkę", "uk": "Вологостійкий чохол для аптечки" },
+      "recommendation": { "en": "1", "ru": "1", "pl": "1", "uk": "1" }
+    },
+    {
+      "id": "personal-medications",
+      "importance": "essential",
+      "name": { "en": "Personal medications", "ru": "Личные лекарства", "pl": "Leki osobiste", "uk": "Особисті ліки" },
+      "recommendation": { "en": "Prescribed regular and emergency medications; preferably a 7-day supply", "ru": "Назначенные постоянные и экстренные лекарства; желательно запас на 7 дней", "pl": "Przepisane leki stałe i ratunkowe; najlepiej zapas na 7 dni", "uk": "Призначені постійні та екстрені ліки; бажано запас на 7 днів" }
+    },
+    {
+      "id": "medical-information-card",
+      "importance": "essential",
+      "name": { "en": "Medical information card", "ru": "Карточка с медицинской информацией", "pl": "Karta informacji medycznej", "uk": "Картка з медичною інформацією" },
+      "recommendation": { "en": "Allergies or unknown allergy status, current medications, prescribed doses and relevant medical conditions", "ru": "Аллергии или отметка, что они неизвестны; текущие лекарства, назначенные дозы и важные заболевания", "pl": "Alergie lub informacja, że są nieznane; obecne leki, przepisane dawki i istotne choroby", "uk": "Алергії або позначка, що вони невідомі; поточні ліки, призначені дози та важливі захворювання" }
+    }
+  ]
+}
