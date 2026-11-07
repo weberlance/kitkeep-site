@@ -119,7 +119,9 @@ Done together with the app project; the app side is judged there.
 - [x] Importance: essential items are personal medications, medical information card, paracetamol, ibuprofen, antihistamine, nitrile gloves, sterile gauze pads, sterile non-adherent dressings, large sterile absorbent dressings, gauze bandages, medical adhesive tape (sensitive-skin medical tape in the child kit), adhesive bandages, sterile saline, blunt-tipped scissors, digital thermometer, emergency thermal blanket, water-resistant first aid pouch, and, in the child kit, oral dosing syringes. Everything else is optional. That gives 17 essential and 9 optional items for adults, and 18 essential and 9 optional for children.
 - [ ] Descriptions and the ru/pl/uk translations drafted by Claude; the pull request template filled in (machine-assisted translation). The maintainer checks the languages they know and spot-checks the others. Sources are linked if there are any (recommended, not required).
 - [x] Delete every test template from `templates/v1/` in the same pull request.
-- [ ] Done when: the pull request is merged with every check passing, `templates/v1/` holds only the two kits, and both appear in the published catalog and on their gallery pages.
+- [x] Done when: the pull request is merged with every check passing, `templates/v1/` holds only the two kits, and both appear in the published catalog and on their gallery pages.
+
+**Remaining (2026-11-07):** PR #9 merged the kits with every check passing, and both are in the published catalog and on their gallery pages. The translation item stays unticked until the maintainer has reviewed the descriptions and the ru, pl and uk texts, and PR #9's description records how each language was written. It must be ticked before the app's first release. A text fix found in review raises that kit's `version`.
 
 ### Task 9: Checks against `main`
 From this task on, templates in `templates/v1/` are permanent (domain rules, 2.7 and 3). Merge it before the app's first release.
