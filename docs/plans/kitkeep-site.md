@@ -146,4 +146,4 @@ From this task on, templates in `templates/v1/` are permanent (domain rules, 2.7
 - [x] Write `src/pages/support.html` with the support address and the FAQ (moving kits to a new phone). The address is inserted from `site.config.json` through a `{{supportEmail}}` placeholder in both pages.
 - [x] Link both pages from the footer.
 - [x] Tests on the build output: both pages exist, are linked from the footer of every page, and show the support address from the configuration.
-- [ ] Done when: both pages are published and match domain rules, sections 5 and 6.
+- [x] Done when: both pages are published and match domain rules, sections 5 and 6.
