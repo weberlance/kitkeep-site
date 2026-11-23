@@ -92,10 +92,10 @@ These apply to every task.
   - a ruleset on `main`: changes only through pull requests, the `checks.yml` job required to pass, no force pushes, no deletion, no required review, and no bypass for anyone, admins included;
   - the `github-pages` environment allows deployments only from `main`;
   - no custom domain on the repo or the `weberlance.github.io` user site.
-- [ ] Account (done by the maintainer): two-factor authentication with a passkey or security key, and recovery codes stored safely.
+- [x] Account (done by the maintainer): two-factor authentication with a passkey or security key, and recovery codes stored safely.
 - [x] Done when: a direct push to `main` is refused, and a pull request with failing checks can't be merged.
 
-**Remaining (2026-11-07):** the settings are in place and the Done when passed: a direct push to `main` was refused, and PR #7, with a failing `checks` job, couldn't be merged. The account item stays unticked until the maintainer confirms it. As an agreed exception, Task 8 may start without it, but it must be ticked before the app's first release.
+**Done (2026-11-23):** the settings are in place and the Done when passed: a direct push to `main` was refused, and PR #7, with a failing `checks` job, couldn't be merged. The maintainer confirmed the account item.
 
 ### Task 7: Integration test with the app
 Done together with the app project; the app side is judged there.
@@ -117,11 +117,11 @@ Done together with the app project; the app side is judged there.
 
 - [x] Item ids are the kebab-case form of the draft keys (for example `nitrile-gloves`, `sterile-non-adherent-dressings`), and the recommendations are the draft texts. Texts that are too long in any language are shortened (for example the child kit's medical information card).
 - [x] Importance: essential items are personal medications, medical information card, paracetamol, ibuprofen, antihistamine, nitrile gloves, sterile gauze pads, sterile non-adherent dressings, large sterile absorbent dressings, gauze bandages, medical adhesive tape (sensitive-skin medical tape in the child kit), adhesive bandages, sterile saline, blunt-tipped scissors, digital thermometer, emergency thermal blanket, water-resistant first aid pouch, and, in the child kit, oral dosing syringes. Everything else is optional. That gives 17 essential and 9 optional items for adults, and 18 essential and 9 optional for children.
-- [ ] Descriptions and the ru/pl/uk translations drafted by Claude; the pull request template filled in (machine-assisted translation). The maintainer checks the languages they know and spot-checks the others. Sources are linked if there are any (recommended, not required).
+- [x] Descriptions and the ru/pl/uk translations drafted by Claude; the pull request template filled in (machine-assisted translation). The maintainer checks the languages they know and spot-checks the others. Sources are linked if there are any (recommended, not required).
 - [x] Delete every test template from `templates/v1/` in the same pull request.
 - [x] Done when: the pull request is merged with every check passing, `templates/v1/` holds only the two kits, and both appear in the published catalog and on their gallery pages.
 
-**Remaining (2026-11-07):** PR #9 merged the kits with every check passing, and both are in the published catalog and on their gallery pages. The translation item stays unticked until the maintainer has reviewed the descriptions and the ru, pl and uk texts, and PR #9's description records how each language was written. It must be ticked before the app's first release. A text fix found in review raises that kit's `version`.
+**Done (2026-11-23):** PR #9 merged the kits with every check passing, and both are in the published catalog and on their gallery pages. The maintainer confirmed the translation item.
 
 ### Task 9: Checks against `main`
 From this task on, templates in `templates/v1/` are permanent (domain rules, 2.7 and 3). Merge it before the app's first release.
@@ -146,4 +146,4 @@ From this task on, templates in `templates/v1/` are permanent (domain rules, 2.7
 - [x] Write `src/pages/support.html` with the support address and the FAQ (moving kits to a new phone). The address is inserted from `site.config.json` through a `{{supportEmail}}` placeholder in both pages.
 - [x] Link both pages from the footer.
 - [x] Tests on the build output: both pages exist, are linked from the footer of every page, and show the support address from the configuration.
-- [ ] Done when: both pages are published and match domain rules, sections 5 and 6.
+- [x] Done when: both pages are published and match domain rules, sections 5 and 6.
