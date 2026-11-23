@@ -45,7 +45,7 @@ a {
 header {
   display: flex;
   flex-wrap: wrap;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
   gap: 0.5rem 1rem;
   padding: 1.25rem 0;
@@ -53,9 +53,16 @@ header {
 }
 
 .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   font-size: 1.25rem;
   font-weight: 700;
   text-decoration: none;
+}
+
+.brand img {
+  border-radius: 7px;
 }
 
 main {
