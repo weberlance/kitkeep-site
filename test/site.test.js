@@ -298,7 +298,10 @@ describe('third-party resources', () => {
         ...[...text.matchAll(/@import\s+["']([^"']*)/g)].map((match) => match[1]),
       ];
       for (const url of urls) {
-        assert.ok(url.startsWith('/kitkeep-site/'), `${relative(out, file)}: ${url}`);
+        // A bare #id points to an element in the same file, such as the site
+        // icon's url(#clip…) clip path, and loads nothing.
+        const sameFile = /^#[\w-]+$/.test(url);
+        assert.ok(sameFile || url.startsWith('/kitkeep-site/'), `${relative(out, file)}: ${url}`);
       }
     }
   });
@@ -374,5 +377,57 @@ describe('the privacy and support pages', () => {
 
   it('tells how to move kits to a new phone on the support page', () => {
     assert.match(text(page('support/index.html')), /export your kits in Settings\. Then import the file in KitKeep on the new phone/);
+  });
+});
+
+describe('site icon', () => {
+  let out;
+  const pages = () => allFiles(out).filter((file) => file.endsWith('.html'));
+  before(() => { out = build(); });
+
+  it('links the favicon and the iPhone home-screen icon on every page', () => {
+    const names = pages().map((file) => relative(out, file));
+    for (const path of ['index.html', 'gallery/index.html', 'gallery/winter-car/index.html', 'privacy/index.html', 'support/index.html']) {
+      assert.ok(names.includes(path), path);
+    }
+    for (const file of pages()) {
+      const html = readFileSync(file, 'utf8');
+      const head = html.slice(0, html.indexOf('</head>'));
+      assert.ok(head.includes('<link rel="icon" href="/kitkeep-site/assets/kitkeep-icon.svg" type="image/svg+xml">'), relative(out, file));
+      assert.ok(head.includes('<link rel="apple-touch-icon" href="/kitkeep-site/assets/apple-touch-icon.png">'), relative(out, file));
+    }
+  });
+
+  it('shows the icon inside the brand link on every page', () => {
+    for (const file of pages()) {
+      const brand = readFileSync(file, 'utf8').match(/<a class="brand"[^>]*>([\s\S]*?)<\/a>/);
+      assert.ok(brand, relative(out, file));
+      const img = brand[1].match(/<img\b[^>]*>/);
+      assert.ok(img, relative(out, file));
+      assert.match(img[0], /\ssrc="[^"]*assets\/kitkeep-icon\.svg"/);
+      assert.match(img[0], /\salt=""/);
+      assert.match(img[0], /\swidth="32"/);
+      assert.match(img[0], /\sheight="32"/);
+    }
+  });
+
+  it('publishes the SVG without the app icon\'s provenance metadata', () => {
+    const file = join(out, 'assets/kitkeep-icon.svg');
+    assert.ok(existsSync(file));
+    const svg = readFileSync(file, 'utf8');
+    assert.ok(svg.startsWith('<svg'));
+    assert.ok(!svg.includes('<metadata'));
+    assert.ok(!/c2pa/i.test(svg));
+    assert.ok(Buffer.byteLength(svg) < 3 * 1024, `${Buffer.byteLength(svg)} bytes`);
+  });
+
+  it('publishes a 180×180 PNG for the iPhone home screen', () => {
+    const file = join(out, 'assets/apple-touch-icon.png');
+    assert.ok(existsSync(file));
+    const png = readFileSync(file);
+    assert.deepEqual([...png.subarray(0, 8)], [0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]);
+    assert.equal(png.toString('latin1', 12, 16), 'IHDR');
+    assert.equal(png.readUInt32BE(16), 180);
+    assert.equal(png.readUInt32BE(20), 180);
   });
 });

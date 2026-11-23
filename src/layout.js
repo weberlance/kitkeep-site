@@ -21,10 +21,12 @@ export function renderPage({ title, main }) {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${escapeHtml(title)}</title>
 <link rel="stylesheet" href="${BASE_PATH}assets/style.css">
+<link rel="icon" href="${BASE_PATH}assets/kitkeep-icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="${BASE_PATH}assets/apple-touch-icon.png">
 </head>
 <body>
 <header>
-<a class="brand" href="${BASE_PATH}">KitKeep</a>
+<a class="brand" href="${BASE_PATH}"><img src="${BASE_PATH}assets/kitkeep-icon.svg" alt="" width="32" height="32">KitKeep</a>
 <nav><a href="${BASE_PATH}gallery/">Templates</a></nav>
 </header>
 <main>
